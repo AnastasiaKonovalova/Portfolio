@@ -1,0 +1,21 @@
+extends ../common.pug
+
+block title
+    title About
+
+block content
+    include ../../components/header/header.pug
+
+    section.works
+        .column--left.column
+            .works__text О работе
+        .column--right.column
+            .works__img Работа
+
+    section.comments
+        .contacts__block Отзывы
+
+    section.feedback
+        .feedback__form Связаться со мной
+
+    include ../../components/footer/footer.pug

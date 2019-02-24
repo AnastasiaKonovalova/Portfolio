@@ -1,0 +1,18 @@
+extends ../common.pug
+
+block title
+    title About
+
+block content
+    include ../../components/header/header.pug
+
+    section.about
+        .column--left.column
+            .about__text Обо мне
+        .column--right.column
+            .techs__text Технологии
+
+    section.contacts
+        .contacts__block Контакты
+
+    include ../../components/footer/footer.pug

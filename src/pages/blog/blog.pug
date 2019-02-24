@@ -1,9 +1,25 @@
-doctype html
-html
-    head
-    meta(charset = "utf-8")
-    meta(name="viewport", content="initial-scale=1.0, width=device-width")
-    title test blog pug
-    body
-        h1 test blog pug
-        h3 test blog 3 pug
+extends ../common.pug
+
+block title
+    title Blog
+
+block content
+    include ../../components/header/header.pug
+    .content
+        .sidebar
+            ul.headers__list
+                li.headers__item Статья 1
+                li.headers__item Статья 2
+                li.headers__item Статья 3
+        .maincontent
+            ul.posts__list
+                li.posts__item 
+                    | Lorem, ipsum dolor sit amet consectetur 
+                    | adipisicing elit. Incidunt necessitatibus minima quia impedit, 
+                    | reiciendis sed. Dolorem corrupti repudiandae deleniti cum aut alias 
+                    | cumque consequatur veniam minima vitae eveniet, reiciendis magnam.
+                li.posts__item 
+                    | Lorem, ipsum dolor sit amet consectetur 
+                    | adipisicing elit. Incidunt necessitatibus minima quia impedit, 
+                    | reiciendis sed. Dolorem corrupti repudiandae deleniti cum aut alias 
+                    | cumque consequatur veniam minima vitae eveniet, reiciendis magnam.

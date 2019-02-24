@@ -1,3 +1,13 @@
-body{
-    background-color: red;
+.content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.sidebar{
+    width: 30%;
+}
+
+.maincontent{
+    width: 70%;
 }

@@ -1,9 +1,15 @@
-doctype html
-html
-    head
-    meta(charset = "utf-8")
-    meta(name="viewport", content="initial-scale=1.0, width=device-width")
-    title test webpack pug
-    body
-        h1 test header pug
-        h3 test header 3 pug
+extends ../common.pug
+
+block title
+    title Welcome
+
+block content
+    .enter
+        .enter__block
+            .enter__img
+            span.enter__text это входная страница
+        .enter__nav
+            nav.nav__list
+                li.nav__item Мои работы
+                li.nav__item Обо мне
+                li.nav__item Блог

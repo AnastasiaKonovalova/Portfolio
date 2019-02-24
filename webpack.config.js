@@ -12,6 +12,8 @@ const PATHS = {
 module.exports = {
   entry: {
     'index': PATHS.source + '/pages/index/index.js',
+    'about': PATHS.source + '/pages/about/about.js',
+    'works': PATHS.source + '/pages/works/works.js',
     'blog': PATHS.source + '/pages/blog/blog.js'
   },
   output: {
@@ -19,11 +21,22 @@ module.exports = {
     filename: './js/[name].js'
   },
   mode: 'development',
+  devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index'],
       template: PATHS.source + '/pages/index/index.pug',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      chunks: ['about'],
+      template: PATHS.source + '/pages/about/about.pug',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'works.html',
+      chunks: ['works'],
+      template: PATHS.source + '/pages/works/works.pug',
     }),
     new HtmlWebpackPlugin({
       filename: 'blog.html',

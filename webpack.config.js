@@ -75,7 +75,7 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg|eot|ttf|woff|woff2)$/i,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
+          name: '[hash:8].[ext]',
           outputPath: 'img'
         }
       }

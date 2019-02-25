@@ -43,6 +43,7 @@ body{
     margin-bottom: 40px;
 }
 
+
 .user{
     color: $white;
     letter-spacing: 0.1em;
@@ -68,9 +69,11 @@ body{
     font-size: 28px;
     font-weight: 500;
     margin-bottom: 10px;
+    text-align: center;
 }
 .user__site-description{
     font-weight: 300;
+    text-align: center;
 }
 
 
@@ -82,6 +85,20 @@ body{
 .socials__item{
     margin: 0 15px;
 }
+.socials__vector{
+    width: 25px;
+    height: 25px;
+    fill: rgba($color: $white, $alpha: 0.5);
+    transition: 0.3s;
+
+    &:hover{
+        fill: $green;
+    }
+}
+.socials__vector--vk{
+    width: 30px;
+    height: 30px;
+}
 
 
 .nav{
@@ -90,14 +107,14 @@ body{
     justify-content: center;
     background-color: $light-green;
     border-radius: 0 0 4px 4px;
-}
-.nav__list{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 .nav__item{
+    transition: 0.3s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
     &:not(:last-of-type){
         border-right: 1.5px solid #a0b99e;
     };
@@ -116,4 +133,5 @@ body{
     color: $white;
     padding: 15px 30px;
     transition: 0.3s;
+    text-align: center;
 }

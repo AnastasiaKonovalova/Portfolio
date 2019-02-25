@@ -4,12 +4,26 @@ block title
     title Welcome
 
 block content
-    .enter
-        .enter__block
-            .enter__img
-            span.enter__text это входная страница
-        .enter__nav
-            nav.nav__list
-                li.nav__item Мои работы
-                li.nav__item Обо мне
-                li.nav__item Блог
+    - var socials=['vk', 'git', 'in']
+    - var pages=['Мои работы', 'Обо мне', 'Блог']
+
+    .auth
+        button.auth__button.button Авторизоваться
+    .central__block.enter
+        .enter__info.user
+            .user__img
+            .user__text
+                .user__name Анастасия Коновалова
+                .user__site-description Личный сайт веб-разработчика
+        .enter__socials.socials
+            ul.socials__list
+                each value, index in socials
+                    li.socials__item= value
+                        a.socials__link(href="#")
+                            //- svg.socials__vector
+
+        nav.enter__nav.nav
+            ul.nav__list
+                each value, index in pages
+                    li.nav__item
+                        a.nav__link(href="#")= value

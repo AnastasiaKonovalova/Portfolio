@@ -1,33 +1,119 @@
+// @import '../common.scss';
+@import '../variables.scss';
+
+body{
+    background-image: url('../../img/water.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.auth{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.button{
+    padding: 15px 25px 15px 25px;
+    border: solid 1.5px $white;
+    border-radius: 25px;
+    color: $white;
+    transition: 0.3s;
+
+    &:hover{
+        border: solid 1.5px $green;
+        background-color: $green;
+    }
+}
+
 .enter{
-    width: 300px;
-    height: 300px;
-    padding: 20px;
-    background-color: salmon;
-    color: olivedrab;
+    background-color: rgba($color: #122620, $alpha: 0.6);
+    border-radius: 4px;
 
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
 }
+.enter__info{
+    margin: 40px auto;
+}
+.enter__socials{
+    margin-bottom: 40px;
+}
 
-.enter__block{
+.user{
+    color: $white;
+    letter-spacing: 0.1em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
-
-.enter__img{
+.user__img{
     background-image: url('../../img/ava.jpg');
     background-size: cover;
-    width: 100px;
-    height: 100px;
+    width: 145px;
+    height: 145px;
     border-radius: 50%;
+    margin-bottom: 25px;
+}
+.user__text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user__name{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.user__site-description{
+    font-weight: 300;
 }
 
+
+.socials, .socials__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.socials__item{
+    margin: 0 15px;
+}
+
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-green;
+    border-radius: 0 0 4px 4px;
+}
 .nav__list{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.nav__item{
+    &:not(:last-of-type){
+        border-right: 1.5px solid #a0b99e;
+    };
+    &:hover{
+        background-color: $green;
+    };
+    &:first-child{
+        border-radius: 0 0 0 4px
+    };
+    &:last-child{
+        border-radius: 0 0 4px 0;
+    }
+}
+.nav__link{
+    display: block;
+    color: $white;
+    padding: 15px 30px;
+    transition: 0.3s;
 }

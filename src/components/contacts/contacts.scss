@@ -1,0 +1,12 @@
+@import '../../pages/variables.scss';
+
+.contacts__item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.contacts__vector{
+    width: 30px;
+    height: 30px;
+    fill: $light-green
+}

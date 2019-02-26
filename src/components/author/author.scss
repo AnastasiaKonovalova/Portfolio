@@ -1,0 +1,47 @@
+.author{
+    color: $white;
+    letter-spacing: 0.1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.author__img{
+    background-image: url('../../img/ava.jpg');
+    background-size: cover;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+.author__description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.author__name{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.author__text{
+    font-weight: 300;
+    text-align: center;
+}
+.author__title{
+    font-family: 'Sansus-Webissimo', 'Arial', 'sans-serif';
+    font-size: 63px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:after{
+        content: '';
+        background: $white;
+        height: 3px;
+        width: 90px;
+        margin-top: 15px;        
+    }
+}

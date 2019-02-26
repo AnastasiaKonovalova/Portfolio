@@ -1,0 +1,12 @@
+include ../../icons/contacts_sprite.svg
+
+- var contacts={skype: 'skype_kdn', mail: 'astahov@gmail.com', phone: '+7 931 200 93 24', map: 'Новосибирск, ул. Инская, д.14'}
+
+ul.contacts__list
+    each value, key in contacts
+        li.contacts__item
+            .contacts__img
+                svg(class = "contacts__vector contacts__vector--" + key)
+                    use(xlink:href="#" + key)  
+
+            .contacts__text=value

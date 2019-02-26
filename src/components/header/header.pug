@@ -1,1 +1,12 @@
-h1.page__header header
+include ../../icons/features.svg
+include ../socials_list/socials_list.pug
+
+header.header
+    .header__socials
+        +socials('white')
+
+    .header__nav
+        .header__menu
+            button.hamburger
+                svg.hamburger__vector
+                    use(xlink:href="#hamburger")

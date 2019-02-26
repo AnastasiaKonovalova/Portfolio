@@ -1,0 +1,11 @@
+- var socials=['vk', 'git', 'in']
+
+include ../../icons/socials_sprite.svg
+mixin socials(newClass)
+    .socials
+        ul.socials__list
+            each value, index in socials
+                li.socials__item
+                    a.socials__link(href="#")
+                        svg(class = "socials__vector socials__vector--" + value + " socials__vector--" + newClass)
+                            use(xlink:href="#" + value)

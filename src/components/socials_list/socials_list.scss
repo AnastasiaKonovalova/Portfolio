@@ -1,0 +1,30 @@
+.socials, .socials__list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.socials__item{
+    margin-right: 30px;
+    &:last-of-type{
+        margin-right: 0;
+    }
+}
+.socials__vector{
+    width: 25px;
+    height: 25px;
+    transition: 0.3s;
+
+    &:hover{
+        fill: $green;
+    }
+}
+.socials__vector--rgba{
+    fill: rgba($color: $white, $alpha: 0.5);
+}
+.socials__vector--white{
+    fill: $white;
+}
+.socials__vector--vk{
+    width: 30px;
+    height: 30px;
+}

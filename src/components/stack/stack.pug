@@ -1,0 +1,7 @@
+mixin stack(stackArray)
+    ul.techs__list
+        each value in stackArray
+            li.techs__item.tech
+                .tech__block
+                    img.tech__img(src=require("../../img/tech_sircle.png"))
+                    .tech__text= value

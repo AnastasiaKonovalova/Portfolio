@@ -4,27 +4,19 @@ block title
     title Welcome
 
 block content
-    include ../../icons/socials_sprite.svg
-    - var socials=['vk', 'git', 'in']
+    include ../../components/author/author.pug
+    include ../../components/socials_list/socials_list.pug
     - var pages=['Мои работы', 'Обо мне', 'Блог']
 
     .auth
         button.auth__button.button Авторизоваться
     .central__block.enter
-        .enter__info.user
-            .user__img
-            .user__text
-                .user__name Анастасия Коновалова
-                .user__site-description Личный сайт веб-разработчика
-        .enter__socials.socials
-            ul.socials__list
-                each value, index in socials
-                    li.socials__item
-                        a.socials__link(href="#")
-                            svg(class = "socials__vector socials__vector--" + value)
-                                use(xlink:href="#" + value)
+        .enter__info
+            +author('Личный сайт веб-разработчика', 'text')
+        .enter__socials
+            +socials('rgba')
 
         nav.enter__nav.nav
             each value, index in pages
                 li.nav__item
-                    a.nav__link(href="#")= value
+                    a.nav__link(href="/about.html")= value

@@ -4,9 +4,18 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-bottom: 20px;
+
+    &:last-of-type{
+        margin-bottom: 0;
+    }
 }
 .contacts__vector{
     width: 30px;
     height: 30px;
     fill: $light-green
+}
+
+.contacts__text{
+    margin-left: 15px;
 }

@@ -122,8 +122,8 @@ section{
 
 
 
-.contacts{
-    background-image: url('../../img/map.png');
+.about__contacts{
+    background-image: url('../../img/map.jpg');
     background-size: cover;
     background-position: center;
 
@@ -133,3 +133,17 @@ section{
     align-items: center;
     justify-content: center;
 }
+
+.contacts__block{
+    padding: 40px;
+    background-color: rgba($color: $white, $alpha: 0.7);
+    border-radius: 4px;
+}
+
+.contacts__title{
+    margin-bottom: 30px;
+    &::after{
+        background-color: $gray-green;
+    }
+}
+

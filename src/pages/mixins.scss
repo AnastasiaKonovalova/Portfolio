@@ -1,0 +1,38 @@
+@import './variables.scss';
+
+@function rem($px) {
+    @return $px / 16px+0rem;
+}
+@mixin tv{
+    @media screen and (max-width: $tv) {
+        @content;
+    }
+}
+@mixin desktop{
+    @media screen and (max-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin phone{
+    @media screen and (max-width: $phone) {
+        @content;
+    }
+}
+@mixin miniphone{
+    @media screen and (max-width: $miniphone) {
+        @content;
+    }
+}
+
+@mixin smallheight{
+  @media screen and (max-height: $smallheight){
+      @content;
+  }
+}

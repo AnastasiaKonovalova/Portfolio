@@ -1,11 +1,31 @@
+@import '../../pages/variables.scss';
+@import '../../pages/mixins.scss';
+
 .techs__list{
+    width: 100%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
+    @include tablet{
+        justify-content: center;
+    };
 }
 .techs__item{
     margin-right: 35px;
     margin-bottom: 35px;
+
+    &:last-of-type{
+        margin-right: 0;
+    }
+
+    @include tablet{
+        margin: 0 17px 35px 17px;
+        &:last-of-type{
+            margin: 0 17px 35px 17px;
+        }
+    
+    }
 }
 
 .tech__block{

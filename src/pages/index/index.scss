@@ -1,5 +1,6 @@
 // @import '../common.scss';
 @import '../variables.scss';
+@import '../mixins.scss';
 @import '../../components/author/author.scss';
 @import '../../components/socials_list/socials_list.scss';
 
@@ -14,6 +15,14 @@ body{
     top: 0;
     right: 0;
     margin: 20px;
+
+    @include phone{
+        position: relative;
+        margin: 30px;
+    }
+    @include miniphone{
+        margin: 10px 0 15px 0;
+    }
 }
 
 .button{
@@ -37,6 +46,10 @@ body{
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between;
+
+    @include phone{
+        margin: auto 15px;
+    }
 }
 .enter__info{
     margin: 40px auto;

@@ -4,19 +4,10 @@ block title
     title Welcome
 
 block content
-    include ../../components/author/author.pug
-    include ../../components/socials_list/socials_list.pug
-    - var pages=['Мои работы', 'Обо мне', 'Блог']
 
     .auth
         button.auth__button.button Авторизоваться
-    .central__block.enter
-        .enter__info
-            +author('Личный сайт веб-разработчика', 'text')
-        .enter__socials
-            +socials('rgba')
+    .central__block.entrance-block
+        include ../../components/welcome/welcome.pug
 
-        nav.enter__nav.nav
-            each value, index in pages
-                li.nav__item
-                    a.nav__link(href="/about.html")= value
+        //- include ../../components/login_form/login_form.pug

@@ -4,7 +4,7 @@
     @return $px / 16px+0rem;
 }
 @mixin tv{
-    @media screen and (max-width: $tv) {
+    @media screen and (min-width: $tv) {
         @content;
     }
 }

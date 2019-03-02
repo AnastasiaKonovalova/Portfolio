@@ -1,21 +1,52 @@
 extends ../common.pug
 
 block title
-    title About
+    title Works
 
 block content
-    include ../../components/header/header.pug
+    include ../../icons/features.svg
+    include ../../components/enter_screen/enter_screen.pug
+    +enter_screen('Мои работы')
 
     section.works
-        .column--left.column
-            .works__text О работе
-        .column--right.column
-            .works__img Работа
+        include ../../components/slider/slider.pug
+            
+    .works__background
+        section.comments
+            h2.comments__title.title Что обо мне говорят
+            .comments__comments
+                ul.comments__list
+                    li.comments__item.comment
+                        .comment__img
+                            img.comment__pic(src=require('../../img/dima.png'))
+                        .comment__text Этот парень проходил обучение веб-разработке 
+                            | не где-то, а в LoftSchool! 2 месяца только самых тяжелых 
+                            | испытаний и бессонных ночей!
+                        .comment__author Ковальчук Дмитрий
+                        .comment__post — основатель Loftschool
+                    li.comments__item.comment
+                        .comment__img
+                            img.comment__pic(src=require('../../img/vova.png'))
+                        .comment__text Этот код выдержит любые испытания. 
+                            | Только пожалуйста, не загружается сайт на слишком 
+                            | старых браузерах!
+                        .comment__author Сабанцев Владимир
+                        .comment__post — преподаватель
 
-    section.comments
-        .contacts__block Отзывы
+        section.feedback
+            .feedback__form
+                form.form(action="POST")
+                    h2.form__title.subtitle Связаться со мной
+                    .form__inputs
+                        input#inputName.form__input.form__input--name(placeholder="Имя")
+                        input#inputMail.form__input.form__input--mail(placeholder="Email")
+                        textarea#inputMessage.form__input.form__input--message(placeholder="Ваше сообщение")
+                    .form__buttons
+                        button#formSubmit(type="submit").form__submit.form-button Отправить
+                        button#formReset(type="reset").form__reset.form-button Очистить
+            button.arrow.arrow--up
+                svg.arrow__vector.arrow__vector--up
+                    use(xlink:href="#arrow_down")
 
-    section.feedback
-        .feedback__form Связаться со мной
-
-    include ../../components/footer/footer.pug
+        .works__footer
+            include ../../components/footer/footer.pug

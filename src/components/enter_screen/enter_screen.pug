@@ -1,0 +1,15 @@
+include ../author/author.pug
+include ../../icons/features.svg
+
+mixin enter_screen(title)
+    section.enter
+        .enter__header
+            include ../../components/header/header.pug
+
+        .central__block
+            +author(title, 'title')
+
+        .enter__arrow
+            button.arrow
+                svg.arrow__vector
+                    use(xlink:href="#arrow_down")

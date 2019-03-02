@@ -1,3 +1,6 @@
+@import '../../pages/variables.scss';
+@import '../../pages/mixins.scss';
+
 .socials, .socials__list{
     display: flex;
     align-items: center;
@@ -17,6 +20,11 @@
     &:hover{
         fill: $green;
     }
+
+    @include phone{
+        width: 20px;
+        height: 20px;
+    }
 }
 .socials__vector--rgba{
     fill: rgba($color: $white, $alpha: 0.5);
@@ -24,7 +32,18 @@
 .socials__vector--white{
     fill: $white;
 }
+.socials__vector--rgba-white{
+    fill: rgba($color: $white, $alpha: 0.5);
+    &:hover{
+        fill: $white;
+    }
+}
 .socials__vector--vk{
     width: 30px;
     height: 30px;
+
+    @include phone{
+        width: 25px;
+        height: 25px;
+    }
 }

@@ -1,33 +1,204 @@
-section{
-    width: 100%;
-    height: 300px;
-    padding: 50px;
-}
+@import '../variables.scss';
+@import '../mixins.scss';
+@import '../../components/enter_screen/enter_screen.scss';
+@import '../../components/slider/slider.scss';
+@import '../../components/footer/footer.scss';
+
 
 .works{
-    background-color: navajowhite;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    height: 100vh;
 }
 
-.column{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .comments{
-    background-color: rebeccapurple;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 70px;
+
+    @include tablet{
+        padding: 50px 30px;
+    }
+    @include phone{
+        padding: 40px 15px;
+    }
+}
+.comments__title{
+    text-align: center;
+    margin-bottom: 35px;
+    color: $dark-gray;
+    font-weight: 400;
+
+    &::after{
+        margin-top: 40px;
+        background-color: $dark-gray;
+    }
+
+    @include tablet{
+        width: 300px;
+
+        &::after{
+            margin-top: 20px;
+        }
+    }
+    @include phone{
+        margin-bottom: 25px;
+    }
+}
+.comments__list{
+    display: flex;
+    align-items: center;
+
+    @include phone{
+        flex-direction: column;
+    }
+}
+.comments__item{
+    width: 50%;
+    margin: 0 10px;
+
+    @include tv{
+        width: 380px;
+    }
+
+    @include phone{
+        width: 100%;
+
+        &:not(:last-of-type){
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.5;
+}
+.comment__img{
+    margin-bottom: 20px;
+}
+.comment__text{
+    margin-bottom: 25px;
+}
+.comment__author{
+    font-weight: 400;
+    color: $green;
+}
+
+
+.feedback{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 70px;
+
+    @include tablet{
+        margin-bottom: 50px;
+    }
+    @include phone{
+        margin-bottom: 40px;
+    }
+}
+.feedback__form{
+    padding-top: 40px;
+    background-color: rgba($color: $dark-gray, $alpha: 0.3);
+    border-radius: 4px;
+    margin-bottom: 70px;
+
+    @include tablet{
+        margin-bottom: 50px;
+    }
+    @include phone{
+        margin-bottom: 40px;
+    }
+}
+.form, .form__inputs{
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+.form__inputs{
+    padding: 0 12px;
+}
+.form__title{
+    margin-bottom: 30px;
+    font-weight: 400;
 
-.feedback{
-    background-color: lightgreen;
+    &::after{
+        background-color: $gray-green;
+    }
+}
+.form__input{
+    width: 340px;
+    margin-bottom: 20px;
+    padding: 13px 20px;
+    border-radius: 20px;
+    font-weight: 300;
+    font-size: 14px;
+
+    @include tablet{
+        width: 300px;
+    }
+    @include phone{
+        width: 270px;
+    }
+}
+.form__input--message{
+    height: 140px;
+    resize: none;
+}
+.form__buttons{
+    background-color: $light-green;
+    border-radius: 0 0 4px 4px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+.form-button{
+    padding: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $white;
+
+    &:hover{
+        background-color: $green;
+    };   
+    &:first-of-type{
+        border-radius: 0 0 0 4px
+    };
+    &:last-of-type{
+        border-radius: 0 0 4px 0;
+    }
+}
+
+.works__footer{
+    width: 100%;
+}
+.works__background{
+    background-image: url('../../img/comments_bg_high.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    @include tv{
+        background-image: url('../../img/comments_bg_big.jpg');
+        background-position: center -10px;
+
+    }
 }

@@ -27,10 +27,15 @@
     font-weight: 500;
     margin-bottom: 10px;
     text-align: center;
+
+    @include phone{
+        font-size: 21px;
+    }
 }
 .author__text{
     font-weight: 300;
     text-align: center;
+    font-size: 16px;
 }
 .author__title{
     font-family: 'Sansus-Webissimo', 'Arial', 'sans-serif';
@@ -39,12 +44,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-weight: 400;
+    margin-top: 20px;
 
     &:after{
         content: '';
         background: $white;
         height: 3px;
         width: 90px;
-        margin-top: 15px;        
+        margin-top: 30px;        
+    }
+
+    @include tablet{
+        font-size: 50px;
+        &::after{
+            height: 2px;
+            margin-top: 20px;
+        }
+    }
+    @include phone{
+        font-size: 35px;
+        &::after{
+            width: 56px;
+        }
     }
 }

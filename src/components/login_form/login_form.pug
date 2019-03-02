@@ -1,0 +1,37 @@
+include ../../icons/features.svg
+
+.login
+    form.login__form.auth-form
+        .login__main
+            h2.login__title.subtitle Авторизуйтесь
+            .auth-form__inputs
+                .auth-form__row
+                    input#inputLogin.auth-form__input.auth-form__input--login(placeholder="Логин")
+                    .auth-form__icon
+                        svg.auth-form__vector.auth-form__vector--login
+                            use(xlink:href="#login")
+                .auth-form__row
+                    input#inputPassword.auth-form__input.auth-form__input--password(placeholder="Пароль")
+                    .auth-form__icon
+                        svg.auth-form__vector.auth-form__vector--password
+                            use(xlink:href="#password")
+
+            .auth-form__check
+                .styled-checkbox
+                    svg.styled-checkbox__vector
+                        use(xlink:href="#check")
+                label.checkbox__label.auth-form__label(for="inputCheck") Я человек
+                input#inputCheck.auth-form__checkbox(type="checkbox")
+            .auth-form__question Вы точно не робот?
+            .auth-form__radio
+                .radio__block.radio__block--left
+                    .styled-radio
+                    label.radio__label.auth-form__label(for="radioYes") Да
+                    input#radioYes.radio__input(type="radio" name="robot")
+                .radio__block.radio__block--right
+                    .styled-radio
+                    label.radio__label.auth-form__label(for="radioNo") Не уверен
+                    input#radioNo.radio__input(type="radio" name="robot") 
+        .login__buttons.form__buttons
+            button#return(type="button").form__return.form__button На главную
+            button#formEnter(type="submit").form__submit.form__button Войти

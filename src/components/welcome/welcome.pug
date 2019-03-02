@@ -1,0 +1,15 @@
+include ../../components/author/author.pug
+include ../../components/socials_list/socials_list.pug
+
+-var nav={works: 'Мои работы', about: 'Обо мне', blog: 'Блог'}
+
+.welcome
+    .welcome__info
+        +author('Личный сайт веб-разработчика', 'text')
+    .welcome__socials
+        +socials('rgba')
+
+    nav.welcome__nav
+        each value, key in nav
+            li.welcome__nav-item
+                a(href=`${key}.html`).welcome__nav-link= value

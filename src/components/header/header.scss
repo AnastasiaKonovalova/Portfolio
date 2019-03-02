@@ -1,4 +1,5 @@
 @import '../../pages/variables.scss';
+@import '../../pages/mixins.scss';
 
 .header{
     width: 100%;
@@ -16,5 +17,10 @@
 
     &:hover{
         fill: $green
+    }
+
+    @include phone{
+        width: 25px;
+        height: 25px;
     }
 }

@@ -1,8 +1,7 @@
-// @import '../common.scss';
 @import '../variables.scss';
 @import '../mixins.scss';
-@import '../../components/author/author.scss';
-@import '../../components/socials_list/socials_list.scss';
+@import '../../components/welcome/welcome.scss';
+@import '../../components/login_form/login_form.scss';
 
 body{
     background-image: url('../../img/water.jpg');
@@ -38,10 +37,8 @@ body{
     }
 }
 
-.enter{
-    background-color: rgba($color: #122620, $alpha: 0.6);
-    border-radius: 4px;
 
+.entrance-block{
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -50,45 +47,4 @@ body{
     @include phone{
         margin: auto 15px;
     }
-}
-.enter__info{
-    margin: 40px auto;
-}
-.enter__socials{
-    margin-bottom: 40px;
-}
-
-.nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $light-green;
-    border-radius: 0 0 4px 4px;
-    width: 100%;
-}
-.nav__item{
-    transition: 0.3s;
-    height: 100%;
-    display: flex;
-    align-items: center;
-
-    &:not(:last-of-type){
-        border-right: 1.5px solid #a0b99e;
-    };
-    &:hover{
-        background-color: $green;
-    };
-    &:first-child{
-        border-radius: 0 0 0 4px
-    };
-    &:last-child{
-        border-radius: 0 0 4px 0;
-    }
-}
-.nav__link{
-    display: block;
-    color: $white;
-    padding: 15px 30px;
-    transition: 0.3s;
-    text-align: center;
 }

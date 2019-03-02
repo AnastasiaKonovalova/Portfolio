@@ -1,0 +1,178 @@
+@import '../../pages/variables.scss';
+@import '../../pages/mixins.scss';
+
+.login{
+    background-color: rgba($color: #122620, $alpha: 0.6);
+    border-radius: 4px;
+}
+.login__main{
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.login__title{
+    color: $white;
+    margin-bottom: 30px;
+    font-weight: 300;
+
+    &::after{
+        background-color: $white;
+    }
+    @include phone{
+        font-size: 30px;
+    }
+}
+
+.auth-form__inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+
+    @include phone{
+        padding: 0 15px;
+    }
+}
+.auth-form__row{
+    position: relative;
+    margin-bottom: 20px;
+}
+.auth-form__input{
+    width: 340px;
+    padding: 13px 20px 13px 60px;
+    border-radius: 20px;
+    font-weight: 300;
+
+    @include tablet{
+        width: 300px;
+    }
+    @include phone{
+        width: 270px;
+    }
+}
+.auth-form__icon{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%)
+}
+.auth-form__vector{
+    width: 15px;
+    height: 15px;
+    fill: $light-gray;
+}
+
+.auth-form__label{
+    color: $white;   
+}
+.auth-form__question{
+    color: $white;  
+    font-weight: 500; 
+}
+
+.auth-form__check{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.styled-checkbox{
+    width: 20px;
+    height: 20px;
+    background-color: $green;
+    border-radius: 2px;
+    position: relative;
+}
+.styled-checkbox--checked{
+    .styled-checkbox__vector{
+        width: 10px;
+        height: 10px;
+        fill: $white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+}
+.styled-checkbox__vector{
+    display: none;
+}
+.checkbox__label{
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+
+.auth-form__question{
+    margin-bottom: 10px;
+}
+
+
+.auth-form__radio, .radio__block{
+    display: flex;
+    align-items: center;
+}
+.radio__block--left{
+    margin-right: 40px;
+}
+.styled-radio{
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border-radius: 50%;
+    position: relative;
+}
+.styled-radio--active{
+    &::after{
+        content: '';
+        width: 8px;
+        height: 8px;
+        background-color: $green;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+}
+.radio__label{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+
+.form__buttons{
+    background-color: $light-green;
+    border-radius: 0 0 4px 4px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.form__button{
+    padding: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $white;
+    transition: 0.3s;
+
+    &:hover{
+        background-color: $green;
+    };   
+    &:first-of-type{
+        border-radius: 0 0 0 4px;
+        border-right: 1.5px solid #a0b99e;
+    };
+    &:last-of-type{
+        border-radius: 0 0 4px 0;
+    }
+
+    @include phone{
+        padding: 15px;
+    }
+}

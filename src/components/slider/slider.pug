@@ -1,0 +1,32 @@
+include ../../icons/features.svg
+
+.slider__section
+    .works__description
+        .central__block
+            .works__title.subtitle Сайт школы онлайн образования
+            .works__techs HTML, CSS, JAVASCRIPT
+            .works__button
+                a(href="#").button__link
+                    svg.button__vector
+                        use(xlink:href="#link")
+                    span.button__text Посмотреть сайт
+
+    .works__main-img
+        .works__img
+            img.works__pic(src=require("../../img/work-1.png"))
+    .works__slider
+        .slider
+            .slider__column.slider__column--left
+                .slider__img
+                    img.slider__pic(src=require("../../img/work-2.png"))
+                .slider__shadow
+                button.slider__arrow.slider__arrow--down
+                    svg.slider__vector
+                        use(xlink:href="#arrow_down_2")
+            .slider__column.slider__column--right
+                .slider__img
+                    img.slider__pic(src=require("../../img/work-3.png"))
+                .slider__shadow
+                button.slider__arrow.slider__arrow--up
+                    svg.slider__vector
+                        use(xlink:href="#arrow_up")

@@ -1,42 +1,9 @@
 @import '../variables.scss';
 @import '../mixins.scss';
-@import '../../components/author/author.scss';
-@import '../../components/socials_list/socials_list.scss';
-@import '../../components/header/header.scss';
+@import '../../components/enter_screen/enter_screen.scss';
 @import '../../components/stack/stack.scss';
 @import '../../components/contacts/contacts.scss';
-
-section{
-    width: 100%;
-}
-
-.about__enter{
-    background-image: url('../../img/water.jpg');
-    background-size: cover;
-    background-position: center;
-    
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-.about__header{
-    width: 100%;
-}
-.about__enter-arrow{
-    margin-bottom: 70px;
-}
-.arrow__vector{
-    fill: rgba($color: $white, $alpha: 0.5);
-    width: 30px;
-    height: 30px;
-    transition: 0.3s;
-
-    &:hover{
-        fill: $white;
-    }
-}
+@import '../../components/footer/footer.scss';
 
 
 .about__main{
@@ -79,12 +46,30 @@ section{
     align-items: center;
     justify-content: flex-start;
 
+
+    @include tv{
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 0 40px;
+    }
     @include tablet{
         padding: 0 20%;
     }
 
     @include phone{
         padding: 0 15px;
+    }
+}
+.about__info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include tv{
+        width: 50%;
     }
 }
 .column__skills-alignment{
@@ -102,12 +87,18 @@ section{
 
 .about__title{
     margin-bottom: 30px;
+
+    @include tv{
+        width: 50%;
+
+    }
 }
 .about__title-text{
-    color: $dark-gray;
+    color: $gray-green;
+    font-weight: 300;
 
     &:after{
-        background-color: $dark-gray;
+        background-color: $gray-green;
     }
 }
 
@@ -119,6 +110,9 @@ section{
     flex-direction: column;
     align-items: center;
 
+    @include tv{
+        width: 100%;
+    }
     @include phone{
         width: 320px;
     }
@@ -134,7 +128,6 @@ section{
     margin-bottom: 15px;
 }
 .description__title{
-    color: $gray-green;
     margin-bottom: 25px;
     
     &:after{
@@ -162,9 +155,14 @@ section{
     text-align: center;
     width: 300px;
     margin-bottom: 25px;
+    font-weight: 300;
 
     &::after{
         background-color: $gray-green;
+    }
+
+    @include phone{
+        padding: 0 70px;
     }
 }
 .skills__text{
@@ -187,6 +185,10 @@ section{
     font-weight: 500;
     text-transform: capitalize;
     margin-bottom: 20px;
+
+    @include tablet{
+        font-size: 21px;
+    }
 }
 
 
@@ -196,20 +198,31 @@ section{
     background-position: center;
 
     height: 100vh;
-    margin-bottom: -150px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
+    justify-content: flex-start;
+    
+    @include phone{
+        height: 150vh;
+    }
 
+}
 .contacts__block{
+    margin-top: 100px;
     padding: 40px;
     background-color: rgba($color: $white, $alpha: 0.7);
     border-radius: 4px;
-}
 
+    @include phone{
+        margin-top: 0;
+        padding: 20px;
+        width: 100vw;
+    }
+}
 .contacts__title{
     margin-bottom: 30px;
+    font-weight: 300;
     &::after{
         background-color: $gray-green;
     }
@@ -217,38 +230,11 @@ section{
 
 
 
-.footer{
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
-    
-    
-    width: 100%;
-    height: 150px;
-    background-color: rgba($color: $dark-gray, $alpha: 0.8);
-    padding: 30px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-
-.footer__quote{
-    color: rgba($color: $white, $alpha: 0.5);
-    width: 40%;
-    line-height: 1.5;
-
-}
-
-.footer__text{
-    font-weight: 300;
-    font-style: italic;
-
-}
-.footer__author{
-    font-weight: 500;
-    font-style: italic;
-
+.about__footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;    
 }
 
   

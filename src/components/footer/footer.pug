@@ -1,1 +1,16 @@
-h1.footer footer
+footer.footer
+    -var nav = {works: 'Мои работы', about: 'Обо мне', blog: 'Блог', index: 'Авторизация'}
+    .footer__nav
+        .nav__block
+            ul.nav__list.nav
+                each value, key in nav
+                    li.nav__item
+                        a(href=`${key}.html`).nav__link= value
+
+        .nav__socials
+            +socials('rgba-white') 
+    .footer__quote
+        .footer__text Всегда пишите код так, 
+            | будто сопровождать его будет склонный к 
+            | насилию психопат, который знает, где вы живете.
+        .footer__author — Martin Golding

@@ -5,8 +5,15 @@ include ../../icons/contacts_sprite.svg
 ul.contacts__list
     each value, key in contacts
         li.contacts__item
-            .contacts__img
-                svg(class = "contacts__vector contacts__vector--" + key)
-                    use(xlink:href="#" + key)  
-
+            a(href=`${
+                key === 'mail' 
+                    ? 'mailto:astahov@gmail.com'
+                    : key === 'phone'
+                    ? 'tel:+79312009324'
+                    : '#'
+            }`)
+                .contacts__img
+                    svg(class = "contacts__vector contacts__vector--" + key)
+                        use(xlink:href="#" + key)  
+                        
             .contacts__text=value

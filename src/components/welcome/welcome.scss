@@ -1,0 +1,54 @@
+@import '../../pages/variables.scss';
+@import '../../pages/mixins.scss';
+@import '../author/author.scss';
+@import '../socials_list/socials_list.scss';
+
+.welcome{
+    background-color: rgba($color: #122620, $alpha: 0.6);
+    border-radius: 4px;
+}
+.welcome__info{
+    margin: 40px auto;
+}
+.welcome__socials{
+    margin-bottom: 40px;
+}
+
+.welcome__nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-green;
+    border-radius: 0 0 4px 4px;
+    width: 100%;
+}
+.welcome__nav-item{
+    transition: 0.3s;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-of-type){
+        border-right: 1.5px solid #a0b99e;
+    };
+    &:hover{
+        background-color: $green;
+    };
+    &:first-child{
+        border-radius: 0 0 0 4px
+    };
+    &:last-child{
+        border-radius: 0 0 4px 0;
+    }
+}
+.welcome__nav-link{
+    display: block;
+    color: $white;
+    padding: 15px 30px;
+    transition: 0.3s;
+    text-align: center;
+
+    @include phone{
+        padding: 20px;
+    }
+}

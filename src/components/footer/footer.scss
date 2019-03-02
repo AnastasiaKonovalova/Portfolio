@@ -1,5 +1,83 @@
+@import '../../pages/variables.scss';
+@import '../../pages/mixins.scss';
+@import '../socials_list/socials_list.scss';
+
 .footer{
-    color: orchid;
+    width: 100%;
+    background-color: rgba($color: $dark-gray, $alpha: 0.8);
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include phone{
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+}
+.footer__nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include phone{
+        align-items: center;
+        border-bottom: 1px solid rgba($color: $white, $alpha: 0.5)
+    }
+}
+.nav__block{
+    margin-bottom: 30px;
+    @include phone{
+        margin-bottom: 20px;
+    }
+}
+.nav{
+    display: flex;
+    align-items: center;
+}
+.nav__item{
+    margin-right: 20px;
+
+    @include phone{
+        margin-right: 10px;
+
+        &:last-of-type{
+            margin-right: 0;
+        }
+    }
+
+}
+.nav__link{
+    color: $white;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.nav__socials{
+    @include phone{
+        margin-bottom: 20px;
+    }
+}
+
+.footer__quote{
+    color: rgba($color: $white, $alpha: 0.5);
+    width: 40%;
+    line-height: 1.5;
+
+    @include phone{
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+.footer__text{
+    font-weight: 300;
+    font-style: italic;
+}
+.footer__author{
     font-weight: 500;
-    font-size: 40px;
+    font-style: italic;
 }

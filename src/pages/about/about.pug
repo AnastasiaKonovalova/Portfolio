@@ -4,51 +4,39 @@ block title
     title About
 
 block content
-    include ../../components/author/author.pug
-    include ../../icons/features.svg
     include ../../components/stack/stack.pug
-    include ../../components/socials_list/socials_list.pug
+    include ../../components/enter_screen/enter_screen.pug
 
     - var frontend=['HTML5', 'CSS', 'JavaScript']
     - var backend=['PHP', 'MySQL', 'Node.js & npm', 'Mongo.db']
     - var workflow=['git', 'webpack', 'gulp']
 
-    section.about__enter
-        .about__header
-            include ../../components/header/header.pug
-
-        .central__block
-            +author('Личный сайт веб-разработчика', 'text')
-
-        .about__enter-arrow
-            button.arrow
-                svg.arrow__vector
-                    use(xlink:href="#arrow_down")
+    +enter_screen('Обо мне')
 
     section.about__main
         .column--left.column
             .column__about-alignment
                 .about__title
-                    .about__title-text.title Обо мне
+                    h2.about__title-text.title Кто я
                     .about__title-img
-                        
-                .about__img
-                    img.about__pic(src=require("../../img/about_ava.JPG"))
 
-                .about__description
-                    .description__title.subtitle Кто я
-                    .description__text-block
-                        p.description__text Я веб разработчик из Новосибирска. Мне 27 лет. 
-                            |Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать 
-                            | интересные и современные проекты. 
-                        p.description__text Этот сайт я сделал в рамках обучения в 
-                            | Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. 
-                            | А пока посмотрите, как тут всё классно и красиво!
+                .about__info        
+                    .about__img
+                        img.about__pic(src=require("../../img/about_ava.JPG"))
+
+                    .about__description
+                        .description__text-block
+                            p.description__text Я веб разработчик из Новосибирска. Мне 27 лет. 
+                                |Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать 
+                                | интересные и современные проекты. 
+                            p.description__text Этот сайт я сделал в рамках обучения в 
+                                | Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. 
+                                | А пока посмотрите, как тут всё классно и красиво!
 
         .column--right.column
             .column__skills-alignment
                 .skills__description
-                    .skills__title.subtitle Чем я могу быть вам полезна
+                    h2.skills__title.subtitle Чем я могу быть вам полезна
                     .skills__text Больше всего меня привлекает Frontend 
                         | разработка, но я также знаком и могу решать не 
                         | сложные задачи на Backend. Но давайте по порядку.
@@ -71,21 +59,10 @@ block content
 
 
     section.about__contacts
-        .contacts__block.central__block
-            .contacts__title.subtitle Контакты
+        .contacts__block
+            h2.contacts__title.subtitle Контакты
             .contacts__contacts
                 include ../../components/contacts/contacts.pug
 
-
-    footer.footer
-        .footer__nav
-            .nav__block
-            .nav__socials
-                +socials('rgba') 
-        .footer__quote
-            .footer__text Всегда пишите код так, 
-                | будто сопровождать его будет склонный к 
-                | насилию психопат, который знает, где вы живете.
-            .footer__author — Martin Golding
-
-    //- include ../../components/footer/footer.pug
+    .about__footer
+        include ../../components/footer/footer.pug

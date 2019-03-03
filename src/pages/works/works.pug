@@ -5,36 +5,43 @@ block title
 
 block content
     include ../../icons/features.svg
+    include ../../icons/blur_filter.svg
     include ../../components/enter_screen/enter_screen.pug
-    +enter_screen('Мои работы')
-
+    +enter_screen('Мои работы', 'works')
+    
     section.works
+        include ../../icons/header_triangles.svg
         include ../../components/slider/slider.pug
             
     .works__background
         section.comments
             h2.comments__title.title Что обо мне говорят
-            .comments__comments
-                ul.comments__list
-                    li.comments__item.comment
+            ul.comments__list
+                li.comments__item.comment
+                    .comment__info
                         .comment__img
                             img.comment__pic(src=require('../../img/dima.png'))
                         .comment__text Этот парень проходил обучение веб-разработке 
                             | не где-то, а в LoftSchool! 2 месяца только самых тяжелых 
-                            | испытаний и бессонных ночей!
+                            | испытаний и бессонных ночей! 
+                    .comment__person
                         .comment__author Ковальчук Дмитрий
                         .comment__post — основатель Loftschool
-                    li.comments__item.comment
+                li.comments__item.comment
+                    .comment__info
                         .comment__img
                             img.comment__pic(src=require('../../img/vova.png'))
                         .comment__text Этот код выдержит любые испытания. 
                             | Только пожалуйста, не загружается сайт на слишком 
                             | старых браузерах!
+                    .comment__person
                         .comment__author Сабанцев Владимир
                         .comment__post — преподаватель
 
         section.feedback
+            
             .feedback__form
+                .blurred
                 form.form(action="POST")
                     h2.form__title.subtitle Связаться со мной
                     .form__inputs

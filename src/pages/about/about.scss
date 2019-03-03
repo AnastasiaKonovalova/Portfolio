@@ -5,8 +5,25 @@
 @import '../../components/contacts/contacts.scss';
 @import '../../components/footer/footer.scss';
 
+.triangle__vector{
+    position: absolute;
+    top: 0;
+    transform: translateY(-99%);
+
+    .left{
+        fill: #ebefe2;
+    }
+    .right{
+        fill: #f4f5f0;
+
+        @include tablet{
+            fill: #ebefe2;
+        }
+    }
+}
 
 .about__main{
+    position: relative;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-areas: 
@@ -25,6 +42,7 @@
     grid-area: about;
 }
 .column--right{
+    background-color: #f4f5f0;
     grid-area: techs;
 }
 
@@ -54,11 +72,12 @@
         padding: 0 40px;
     }
     @include tablet{
-        padding: 0 20%;
+        // padding: 0 20%;
+        padding: 50px 110px 0 110px;
     }
 
     @include phone{
-        padding: 0 15px;
+        padding: 30px 15px 0 15px;
     }
 }
 .about__info{
@@ -73,15 +92,17 @@
     }
 }
 .column__skills-alignment{
-    margin: 0 0 0 40px;
+    padding: 0 0 0 40px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
     @include tablet{
-        margin: 0 110px;
+        padding: 50px 110px 0 110px;
     }
-
+    @include phone{
+        padding: 30px 15px 0 15px;
+    }
 }
 
 
@@ -146,10 +167,6 @@
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 60px;
-
-    @include tablet{
-        margin-top: 50px;
-    }
 }
 .skills__title{
     text-align: center;

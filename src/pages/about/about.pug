@@ -11,9 +11,10 @@ block content
     - var backend=['PHP', 'MySQL', 'Node.js & npm', 'Mongo.db']
     - var workflow=['git', 'webpack', 'gulp']
 
-    +enter_screen('Обо мне')
+    +enter_screen('Обо мне', 'about')
 
     section.about__main
+        include ../../icons/header_triangles.svg
         .column--left.column
             .column__about-alignment
                 .about__title
@@ -39,8 +40,7 @@ block content
                     h2.skills__title.subtitle Чем я могу быть вам полезна
                     .skills__text Больше всего меня привлекает Frontend 
                         | разработка, но я также знаком и могу решать не 
-                        | сложные задачи на Backend. Но давайте по порядку.
-                
+                        | сложные задачи на Backend. Но давайте по порядку.                
                 .skills__main
                     ul.stack__list
 

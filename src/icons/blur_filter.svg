@@ -1,0 +1,7 @@
+<svg width="1000" height="1000">
+    <symbol>
+        <filter id="blurFilter">
+            <feGaussianBlur stdDeviation="3"/>
+        </filter>
+    </symbol>
+</svg>

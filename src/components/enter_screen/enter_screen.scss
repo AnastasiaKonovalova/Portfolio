@@ -21,6 +21,10 @@
 }
 .enter__arrow{
     margin-bottom: 70px;
+
+    @include tablet{
+        margin-bottom: 50px;
+    }
 }
 .arrow__vector{
     fill: rgba($color: $white, $alpha: 0.7);
@@ -34,4 +38,16 @@
 }
 .arrow__vector--up{
     transform: rotate(180deg);
+}
+
+
+.enter__central{
+    position: relative;
+}
+.background__block{
+    width: 120%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
 }

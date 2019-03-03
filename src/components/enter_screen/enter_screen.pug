@@ -1,13 +1,22 @@
 include ../author/author.pug
 include ../../icons/features.svg
 
-mixin enter_screen(title)
+
+mixin enter_screen(title, page)
     section.enter
         .enter__header
             include ../../components/header/header.pug
 
-        .central__block
+        .enter__central.central__block
             +author(title, 'title')
+            .background__block.background__block--white
+                if page == 'blog'
+                    include ../../icons/blog_header.svg
+                if page == 'about'
+                    include ../../icons/about_header.svg
+                if page == 'works'
+                    include ../../icons/works_header.svg
+
 
         .enter__arrow
             button.arrow

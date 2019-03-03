@@ -7,6 +7,7 @@
 }
 
 body{
+    z-index: 0;
     width: 100%;
     min-height: 100vh;
     font-family: 'roboto', 'Arial', 'sans-serif';
@@ -67,6 +68,7 @@ section{
 }
 
 .wrapper{
+    z-index: 0;
     width: 100%;
     min-height: 100vh;
     position: relative;
@@ -141,5 +143,15 @@ section{
             width: 56px;
         }
     }
+}
 
+.background__block--white {
+    .background__vector{
+        fill: rgba($color: $white, $alpha: .15)
+    }
+}
+.background__block--green {
+    .background__vector{
+        fill: rgba($color: #93c42e, $alpha: .15)
+    }
 }

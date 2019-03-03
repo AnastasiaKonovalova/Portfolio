@@ -3,8 +3,21 @@
 @import '../../components/enter_screen/enter_screen.scss';
 @import '../../components/footer/footer.scss';
 
+.triangle__vector{
+    position: absolute;
+    top: 0;
+    transform: translateY(-99%);
+
+    .left{
+        fill: #f9f8f0;
+    }
+    .right{
+        fill: #f9f8f0;
+    }
+}
 
 .blog{
+    position: relative;
     background-color: #faf8f0;
     display: flex;
     align-items: flex-start;
@@ -14,6 +27,7 @@
 .sidebar{
     width: 30%;
     margin-left: 50px;
+    margin-top: 70px;
 
     @include tablet{
         display: none;

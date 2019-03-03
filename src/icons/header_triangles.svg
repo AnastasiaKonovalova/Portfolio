@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class ="triangle__vector" version="1.1" id="triangle_left" viewBox="0 0 1000 85" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<polygon class = "left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+	<polygon class = "right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+</svg>

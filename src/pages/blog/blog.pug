@@ -9,10 +9,11 @@ block content
     //- include ./articles.pug
 
     include ../../components/enter_screen/enter_screen.pug
-    +enter_screen('Блог')
+    +enter_screen('Блог', 'blog')
 
     section.blog
-        .sidebar
+        include ../../icons/header_triangles.svg
+        aside.sidebar
             ul.headers__list
                 each val in articles
                     li.headers__item.headers__item--active

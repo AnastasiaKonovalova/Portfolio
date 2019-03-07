@@ -6,8 +6,10 @@ block title
 block content
 
     .auth
-        button.auth__button.button Авторизоваться
-    .central__block.entrance-block
-        include ../../components/welcome/welcome.pug
-
-        //- include ../../components/login_form/login_form.pug
+        button#authButton.auth__button.button Авторизоваться
+    .central__block.entrance-block.flip-container
+        .flipper#flippedBlock
+            .front
+                include ../../components/welcome/welcome.pug
+            .back
+                include ../../components/login_form/login_form.pug

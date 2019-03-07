@@ -51,7 +51,7 @@
         width: 300px;
     }
     @include phone{
-        width: 270px;
+        width: 260px;
     }
 }
 .auth-form__icon{
@@ -78,6 +78,10 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+}
+.auth-form__checkbox{
+    position: absolute;
+    visibility: hidden;
 }
 .styled-checkbox{
     width: 20px;
@@ -117,6 +121,10 @@
 }
 .radio__block--left{
     margin-right: 40px;
+}
+.radio__input{
+    position: absolute;
+    visibility: hidden;
 }
 .styled-radio{
     width: 20px;

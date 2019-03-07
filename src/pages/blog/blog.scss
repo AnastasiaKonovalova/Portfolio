@@ -24,37 +24,106 @@
     justify-content: center;
 }
 
-.sidebar{
-    width: 30%;
-    margin-left: 50px;
-    margin-top: 70px;
-
-    @include tablet{
-        display: none;
-    }
-}
-
 .maincontent{
-    width: 70%;
-    margin: 0 100px;
+    margin-left: 400px;
+    margin-right: 100px;
+    width: 100%;
 
     @include tablet{
         width: 100%;
         margin: 0 25px;
     }
 }
+.sidebar{
+    width: 250px;
+
+    @include tablet{
+        background-color: $light-green;
+        padding-top: 100px;
+        transition: left 0.5s;
+    }    
+}
+.blog__sidebar{
+    left: 50px;
+    top: 70px;
+    position: absolute;
+    bottom: 0;
+    overflow: visible;
+
+    @include tablet{
+        top: -70px;
+        left: -250px;
+    }
+}
+.blog__sidebar--visible{
+    @include tablet{
+        left: 0;
+    }
+}
+.blog__sidebar--fixed{
+    position: fixed;
+
+    .headers__list{
+        padding-right: 0;
+    }
+    .sidebar__button{
+        left: 205px;
+    }
+}
+
+.sidebar__button{
+    display: none;
+    transition: 0.5s;
+
+    @include tablet{
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $light-green;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 190px;
+    }
+}
+
+.headers__list{
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    padding-right: 17px;
+    overflow-y: auto;
+}
 
 
 .headers__item{
-    padding: 12px 20px;
+    padding: 12px 20px 12px 0;
     margin-bottom: 10px;
     text-align: right;
+    z-index: 10;
+
+    @include tablet{
+        color: $white;
+    }
 }
 .headers__item--active{
-    border-right: 3px solid $green; 
+    border-right: 3px solid $green;
+    
+    @include tablet{
+        border: none;
+        font-weight: 500;
+    }
 }
+
+
 .headers__link{
     line-height: 1.5;
+
+    @include tablet{
+        color: $white;
+    }
+
 }
 
 

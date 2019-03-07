@@ -2,7 +2,22 @@
 @import '../mixins.scss';
 @import '../../components/author/author.scss';
 @import '../../components/header/header.scss';
+@import '../../components/fullscreen_nav/fullscreen_nav.scss';
 
+
+.fullscreen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    display: none;
+}
+.fullscreen--visible{
+    display: block;
+}
 
 .enter{
     background-image: url('../../img/water.jpg');
@@ -25,6 +40,10 @@
     @include tablet{
         margin-bottom: 50px;
     }
+}
+.arrow{
+    width: 40px;
+    height: 40px;
 }
 .arrow__vector{
     fill: rgba($color: $white, $alpha: 0.7);

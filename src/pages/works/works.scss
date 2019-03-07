@@ -4,7 +4,6 @@
 @import '../../components/slider/slider.scss';
 @import '../../components/footer/footer.scss';
 
-
 .works{
     position: relative;
     height: 100vh;
@@ -131,42 +130,23 @@
     }
 }
 .blurred{
-    background-color: rgba($color: #e0e0dc, $alpha: 0.5);
-    border-radius: 4px;
-    position: absolute;
+    overflow: hidden;
+    position: relative;
 
-
-    // width: 110%;                   
-    // height: 110%;
-    // filter: url(#blurFilter);
-
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -10;
-    // overflow: hidden;
-    // visibility: hidden;
-
-    // &::after{
-    //     border-radius: 4px;
-    //     visibility: visible;
-    //     content: '';
-    //     position: absolute;
-    //     background: inherit;
-    //     width: 110%;                   
-    //     height: 110%;
-    //     left: -5%;
-    //     top: -5%;
-    //     filter: url(#blurFilter);
-    // }
+    .blur{
+        position: absolute;
+        border-radius: 4px;
+        background-color: rgba($color: #e0e0dc, $alpha: 0.5);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -10;
+    }
 }
 
 
 .feedback__form{
-    position: relative;
-    // overflow: hidden;
-    padding-top: 40px;
     border-radius: 4px;
     margin-bottom: 70px;
 
@@ -187,6 +167,8 @@
     padding: 0 12px;
 }
 .form__title{
+    padding-top: 40px;
+
     margin-bottom: 30px;
     font-weight: 400;
 
@@ -227,6 +209,7 @@
     flex-direction: column;
     align-items: center;
     color: $white;
+    transition: 0.3s;
 
     &:hover{
         background-color: $green;
@@ -244,6 +227,7 @@
     width: 100%;
 }
 .works__background{
+    position: relative;
     z-index: -20;
     background-image: url('../../img/comments_bg_high.jpg');
     background-size: cover;

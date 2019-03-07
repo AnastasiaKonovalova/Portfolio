@@ -1,0 +1,12 @@
+-var nav = {works: 'Мои работы', about: 'Обо мне', blog: 'Блог', index: 'Авторизация'}
+include ../../icons/features.svg
+
+.menu
+    button#closeNavButton.menu_close-btn.close-btn
+        svg.close-btn__vector
+            use(xlink:href="#close")
+
+    ul.menu-nav
+        each value, key in nav
+            li.menu-nav__item
+                a(href=`${key}.html`).menu-nav__link.title= value

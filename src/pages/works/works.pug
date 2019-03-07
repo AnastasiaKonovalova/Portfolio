@@ -5,7 +5,7 @@ block title
 
 block content
     include ../../icons/features.svg
-    include ../../icons/blur_filter.svg
+    //- include ../../icons/blur_filter.svg
     include ../../components/enter_screen/enter_screen.pug
     +enter_screen('Мои работы', 'works')
     
@@ -42,16 +42,17 @@ block content
             
             .feedback__form
                 .blurred
-                form.form(action="POST")
-                    h2.form__title.subtitle Связаться со мной
-                    .form__inputs
-                        input#inputName.form__input.form__input--name(placeholder="Имя")
-                        input#inputMail.form__input.form__input--mail(placeholder="Email")
-                        textarea#inputMessage.form__input.form__input--message(placeholder="Ваше сообщение")
-                    .form__buttons
-                        button#formSubmit(type="submit").form__submit.form-button Отправить
-                        button#formReset(type="reset").form__reset.form-button Очистить
-            button.arrow.arrow--up
+                    .blur
+                    form.form(action="POST")
+                        h2.form__title.subtitle Связаться со мной
+                        .form__inputs
+                            input#inputName.form__input.form__input--name(placeholder="Имя")
+                            input#inputMail.form__input.form__input--mail(placeholder="Email")
+                            textarea#inputMessage.form__input.form__input--message(placeholder="Ваше сообщение")
+                        .form__buttons
+                            button#formSubmit(type="submit").form__submit.form-button Отправить
+                            button#formReset(type="reset").form__reset.form-button Очистить
+            button#scrollUpButton.arrow.arrow--up
                 svg.arrow__vector.arrow__vector--up
                     use(xlink:href="#arrow_down")
 

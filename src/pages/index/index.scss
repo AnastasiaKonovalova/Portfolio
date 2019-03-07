@@ -38,7 +38,34 @@ body{
 }
 
 
-.entrance-block{
+.flip-container{
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+}
+.flipped{
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.flipper{
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -o-transition: 0.6s;
+    transition: 0.6s;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;  
+	-o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    
+    position: relative;
+}
+
+.front, .back{
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -47,4 +74,21 @@ body{
     @include phone{
         margin: auto 15px;
     }
+
+    -webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.back{
+    -webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }

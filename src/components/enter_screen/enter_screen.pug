@@ -3,6 +3,9 @@ include ../../icons/features.svg
 
 
 mixin enter_screen(title, page)
+    .fullscreen
+        include ../../components/fullscreen_nav/fullscreen_nav.pug
+
     section.enter
         .enter__header
             include ../../components/header/header.pug
@@ -19,6 +22,6 @@ mixin enter_screen(title, page)
 
 
         .enter__arrow
-            button.arrow
+            button#scrollDownButton.arrow
                 svg.arrow__vector
                     use(xlink:href="#arrow_down")

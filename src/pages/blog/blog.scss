@@ -98,7 +98,7 @@
 
 
 .headers__item{
-    padding: 12px 20px 12px 0;
+    padding: 12px 23px 12px 0;
     margin-bottom: 10px;
     text-align: right;
     z-index: 10;
@@ -108,22 +108,22 @@
     }
 }
 .headers__item--active{
+    padding: 12px 20px 12px 0;
     border-right: 3px solid $green;
+    color: $green;
     
     @include tablet{
         border: none;
         font-weight: 500;
+        color: $white;
     }
 }
 
 
 .headers__link{
+    color: inherit;
     line-height: 1.5;
-
-    @include tablet{
-        color: $white;
-    }
-
+    font-weight: inherit;
 }
 
 

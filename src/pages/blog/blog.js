@@ -3,16 +3,35 @@ import '../common.scss';
 import './blog.scss';
 
 import { initNavigationListeners } from '../../utilities/commonEvents';
-
 console.log('blog.js');
+
 const blogSection = document.querySelector('.blog');
 const sidebar = document.querySelector('.sidebar');
 const showSidebarButton = document.querySelector('#showSidebar');
 const maincontent = document.querySelector('.maincontent');
 
-initNavigationListeners(blogSection);
+const headers = document.querySelectorAll('.headers__item');
+const posts = document.querySelectorAll('.posts__item');
+const postsMap = new WeakMap(
+    Array.prototype.map.call( posts, (post, index) => [post, headers[index]] )
+);
 
-window.addEventListener('scroll', e => {
+const manageHeadersHighlight = () => {
+    let currentPost;
+    if (window.innerWidth < 1200){
+        currentPost = document.elementFromPoint(window.innerWidth - 35, 100);
+    } else {
+        currentPost = document.elementFromPoint(window.innerWidth / 2, 200);
+    }
+
+    if( currentPost.classList.contains('posts__item') ) {
+        const currentHeader = postsMap.get(currentPost);
+
+        Array.prototype.forEach.call(headers, header => header.classList.remove('headers__item--active'))
+        currentHeader.classList.add('headers__item--active');
+    }
+}
+const manageSidebarGeometry = () => {
     const blogCoords = blogSection.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     const sidebarBottom = blogCoords.bottom - windowHeight;
@@ -27,9 +46,40 @@ window.addEventListener('scroll', e => {
         sidebar.style.bottom = `${Math.abs(sidebarBottom) + 0.5}px`
     } else {
         sidebar.style.bottom = '0px';
-    }
+    };
+};
+
+const swipe = () => {
+    let startX, endX, distantion;
+    const minMove = 100;
+
+    window.addEventListener('touchstart', e => {
+        startX = e.touches[0].clientX;
+    });
+    window.addEventListener('touchmove', e => {
+        e.preventDefault()
+    });
+    window.addEventListener('touchend', e => {
+        endX = e.changedTouches[0].clientX;
+        distantion = startX - endX;
+
+        if (Math.abs(distantion) > minMove) {
+            if (distantion > 0) {
+                sidebar.classList.remove('blog__sidebar--visible')
+            } else {
+                sidebar.classList.add('blog__sidebar--visible');
+            }
+        }
+    });
+}
+swipe()
+initNavigationListeners(blogSection);
+
+window.addEventListener('scroll', e => {
+    manageHeadersHighlight();
+    manageSidebarGeometry()
 });
 
 showSidebarButton.addEventListener('click', e => {
-    sidebar.classList.toggle('blog__sidebar--visible')
+    sidebar.classList.toggle('blog__sidebar--visible');
 })

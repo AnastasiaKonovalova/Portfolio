@@ -17,10 +17,10 @@ block content
             button#showSidebar.sidebar__button
             ul.headers.headers__list
                 each val in articles
-                    li.headers__item.headers__item--active
+                    li.headers__item
                         a(href=`#${val.title}`).headers__link=val.title
         .maincontent
-            ul.posts__list
+            ul.posts.posts__list
                 each val in articles
                     li.posts__item.post 
                         a(name=`${val.title}`)

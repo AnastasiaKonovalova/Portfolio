@@ -148,13 +148,13 @@ section{
     }
 }
 
-.background__block--white {
+.background__text--white {
     .background__vector{
-        fill: rgba($color: $white, $alpha: .15)
+        fill: rgba($color: $white, $alpha: .2)
     }
 }
-.background__block--green {
+.background__text--green {
     .background__vector{
-        fill: rgba($color: #93c42e, $alpha: .15)
+        fill: rgba($color: #93c42e, $alpha: .2)
     }
 }

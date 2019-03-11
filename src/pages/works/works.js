@@ -1,7 +1,9 @@
+import 'normalize.css';
 import '../common.scss';
 import './works.scss';
-import 'normalize.css';
+import '../../components/slider/slider';
 import { initNavigationListeners } from '../../utilities/commonEvents';
+import '../../components/enter_screen/enter_screen';
 
 console.log('works.js')
 

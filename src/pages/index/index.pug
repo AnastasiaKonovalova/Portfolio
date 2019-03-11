@@ -4,7 +4,11 @@ block title
     title Welcome
 
 block content
+    - var layer1 = require('../../img/layer_1.png')
+    - var layer2 = require('../../img/layer_2.png')
+    - var layer3 = require('../../img/layer_3.png')
 
+    .parallax#parallax
     .auth
         button#authButton.auth__button.button Авторизоваться
     .central__block.entrance-block.flip-container

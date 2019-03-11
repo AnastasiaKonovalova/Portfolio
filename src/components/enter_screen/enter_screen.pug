@@ -7,18 +7,20 @@ mixin enter_screen(title, page)
         include ../../components/fullscreen_nav/fullscreen_nav.pug
 
     section.enter
+        .enter__bg
+            img.enter__img(src=require('../../img/water.jpg'))
         .enter__header
             include ../../components/header/header.pug
 
-        .enter__central.central__block
-            +author(title, 'title')
-            .background__block.background__block--white
+        .enter__central
+            .background__text.background__text--white
                 if page == 'blog'
                     include ../../icons/blog_header.svg
                 if page == 'about'
                     include ../../icons/about_header.svg
                 if page == 'works'
                     include ../../icons/works_header.svg
+            +author(title, 'title')
 
 
         .enter__arrow

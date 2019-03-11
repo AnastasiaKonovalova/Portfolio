@@ -63,9 +63,9 @@
 .blog__sidebar--fixed{
     position: fixed;
 
-    .headers__list{
-        padding-right: 0;
-    }
+    // .headers__list{
+    //     padding-right: 0;
+    // }
     .sidebar__button{
         left: 205px;
     }
@@ -92,8 +92,9 @@
     height: 100%;
     width: 100%;
     z-index: 10;
-    padding-right: 17px;
+    // padding-right: 17px;
     overflow-y: auto;
+    overscroll-behavior-y: contain;
 }
 
 

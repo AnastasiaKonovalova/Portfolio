@@ -17,25 +17,65 @@
 }
 .fullscreen--visible{
     display: block;
+
 }
 
+#hamburger1{
+    &:hover{
+        transform: rotate(45deg);
+        transform-origin: left;
+    }
+}
+#hamburger2{
+    &:hover{
+        opacity: 0;
+    }
+}
+#hamburger3{
+    &:hover{
+        transform: rotate(-45deg);
+        transform-origin: left;
+    }
+}
+
+
 .enter{
-    background-image: url('../../img/water.jpg');
-    background-size: cover;
-    background-position: center;
-    
     width: 100%;
     height: 100vh;
+    min-height: 770px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+.enter__bg{
+    z-index: -10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.enter__img{
+    position: absolute;
+    height: 110%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 .enter__header{
     width: 100%;
 }
 .enter__arrow{
+    z-index: 10;
     margin-bottom: 70px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
     @include tablet{
         margin-bottom: 50px;
@@ -44,6 +84,9 @@
 .arrow{
     width: 40px;
     height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .arrow__vector{
     fill: rgba($color: $white, $alpha: 0.7);
@@ -61,12 +104,17 @@
 
 
 .enter__central{
-    position: relative;
-}
-.background__block{
-    width: 120%;
     position: absolute;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 50px;
+}
+.background__text{
+    z-index: -1;
+    width: 200%;
+    position: absolute;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
 }

@@ -3,6 +3,8 @@ import '../common.scss';
 import './blog.scss';
 
 import { initNavigationListeners } from '../../utilities/commonEvents';
+import '../../components/enter_screen/enter_screen';
+
 console.log('blog.js');
 
 const blogSection = document.querySelector('.blog');
@@ -10,24 +12,27 @@ const sidebar = document.querySelector('.sidebar');
 const showSidebarButton = document.querySelector('#showSidebar');
 const maincontent = document.querySelector('.maincontent');
 
-const headers = document.querySelectorAll('.headers__item');
-const posts = document.querySelectorAll('.posts__item');
+let headers = document.querySelectorAll('.headers__item');
+headers = [...headers];
+let posts = document.querySelectorAll('.posts__item');
+posts = [...posts];
+
 const postsMap = new WeakMap(
-    Array.prototype.map.call( posts, (post, index) => [post, headers[index]] )
+    posts.map( (post, index) => [post, headers[index]] )
 );
 
 const manageHeadersHighlight = () => {
     let currentPost;
-    if (window.innerWidth < 1200){
-        currentPost = document.elementFromPoint(window.innerWidth - 35, 100);
+    if (window.innerWidth <= 768){
+        currentPost = document.elementFromPoint(window.innerWidth - 35, window.innerHeight / 3);
     } else {
-        currentPost = document.elementFromPoint(window.innerWidth / 2, 200);
+        currentPost = document.elementFromPoint(window.innerWidth - 120, window.innerHeight / 3);
     }
 
     if( currentPost.classList.contains('posts__item') ) {
         const currentHeader = postsMap.get(currentPost);
 
-        Array.prototype.forEach.call(headers, header => header.classList.remove('headers__item--active'))
+        headers.forEach( header => header.classList.remove('headers__item--active') );
         currentHeader.classList.add('headers__item--active');
     }
 }

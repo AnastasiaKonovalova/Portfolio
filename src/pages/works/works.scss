@@ -19,12 +19,15 @@
         @include tablet{
             fill: #e1e4d7;
         }
+
+        @include phone-landscape{
+            fill: #ebefe2;
+        }
     }
     .right{
         fill: #e1e4d7;
     }
 }
-
 
 .comments{
     display: flex;

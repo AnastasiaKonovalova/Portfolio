@@ -37,18 +37,32 @@ body{
     transform: translate3d(-50%, -50%, 0)
 }
 
+.entrance-block{
+    @include phone-landscape{
+        margin: 20px;
+    }
+}
+
 .auth{
     position: absolute;
-    top: 0;
     right: 0;
     margin: 20px;
 
     @include phone{
         position: relative;
+        top: 0;
         margin: 30px;
     }
     @include miniphone{
+        top: 0;
         margin: 10px 0 15px 0;
+    }
+    @include phone-landscape{
+        position: absolute;
+        bottom: 70px;
+        right: 50%;
+        margin: 20px 0 0 0;
+        transform: translate(50%, 100%)
     }
 }
 
@@ -57,7 +71,7 @@ body{
     border: solid 1.5px $white;
     border-radius: 25px;
     color: $white;
-    transition: 0.3s;
+    transition: border background-color 0.3s;
 
     &:hover{
         border: solid 1.5px $green;

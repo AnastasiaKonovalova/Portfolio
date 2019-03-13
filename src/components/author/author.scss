@@ -2,6 +2,7 @@
 @import '../../pages/mixins.scss';
 
 .author{
+    min-width: 280px;
     color: $white;
     letter-spacing: 0.1em;
     display: flex;

@@ -17,7 +17,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoia29ub3ZhbG92YS1hbmFzdCIsImEiOiJjanI4M25ndzYwM
 const map = new mapboxgl.Map({
     container: 'mapContainer',
     style: 'mapbox://styles/konovalova-anast/cjt6wtb412ghs1fjwii2ghisf',
-    center: [37.409607, 55.759663],
+    center: [37.622504, 55.753215],
     zoom: 10
 });
 
@@ -27,5 +27,5 @@ const marker = new mapboxgl.Marker({
     element: div,
     anchor: 'bottom'
 });
-marker.setLngLat([37.645701, 55.859663]);
+marker.setLngLat([37.622504, 55.753215]);
 marker.addTo(map);

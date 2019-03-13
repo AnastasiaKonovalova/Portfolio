@@ -25,6 +25,11 @@
         @content;
     }
 }
+@mixin phone-landscape{
+    @media screen and (max-width: $phone) and (orientation: landscape){
+        @content;
+    }
+}
 @mixin miniphone{
     @media screen and (max-width: $miniphone) {
         @content;

@@ -15,10 +15,11 @@ const flipAndChangeDisplay = () => {
     const classList = flippedBlock.classList;
     if( classList.contains('flipped') ) {
         classList.remove('flipped');
-        authButton.style.display = 'block';
+        authButton.style.visibility = 'visible';
     } else {
         classList.add('flipped');
-        authButton.style.display = 'none';
+        authButton.style.visibility = 'hidden';
+        window.scrollTo(0, 0);
     }
 }
 

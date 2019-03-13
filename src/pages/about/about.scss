@@ -4,7 +4,6 @@
 @import '../../components/stack/stack.scss';
 @import '../../components/contacts/contacts.scss';
 @import '../../components/footer/footer.scss';
-// @import '../../components/fullscreen_nav/fullscreen_nav.scss';
 
 .triangle__vector{
     position: absolute;
@@ -73,23 +72,32 @@
         padding: 0 40px;
     }
     @include tablet{
-        // padding: 0 20%;
         padding: 50px 110px 0 110px;
     }
 
     @include phone{
-        padding: 30px 15px 0 15px;
+        padding: 30px 10px 0 10px;
     }
+
+    @include phone-landscape{
+        padding: 30px 10px 0 10px;
+    }
+
 }
 .about__info{
-    width: 100%;
+    // width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
 
     @include tv{
         width: 50%;
+    }
+
+    @include phone-landscape{
+        height: 100vh;
     }
 }
 .column__skills-alignment{
@@ -102,7 +110,10 @@
         padding: 50px 110px 0 110px;
     }
     @include phone{
-        padding: 30px 15px 0 15px;
+        padding: 30px 10px 0 10px;
+    }
+    @include phone-landscape{
+        padding: 30px 10px 0 10px;
     }
 }
 
@@ -112,7 +123,6 @@
 
     @include tv{
         width: 50%;
-
     }
 }
 .about__title-text{
@@ -126,7 +136,7 @@
 
 .about__img{
     height: 400px;
-    width: 500px;
+    width: 400px;
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
@@ -138,6 +148,11 @@
     @include phone{
         width: 320px;
     }
+    @include phone-landscape{
+        width: 50%;
+        height: 100%;
+        margin-bottom: 0;
+    }
 }
 .about__pic{
     max-height: 100%;
@@ -148,6 +163,13 @@
 
 .about__description{
     margin-bottom: 15px;
+    padding: 0 20px;
+
+    @include phone-landscape{
+        width: 50%;
+        height: 100%;
+        margin-bottom: 0;
+    }
 }
 .description__title{
     margin-bottom: 25px;
@@ -159,6 +181,14 @@
 .description__text{
     line-height: 1.5;
     margin-bottom: 15px;
+
+    @include phone{
+        padding: 0 10px;
+    }
+
+    @include phone-landscape{
+        padding: 0 10px;
+    }
 }
 
 
@@ -185,6 +215,14 @@
 }
 .skills__text{
     line-height: 1.5;
+
+    @include phone{
+        padding: 0 10px;
+    }
+
+    @include phone-landscape{
+        padding: 0 10px;
+    }
 }
 
 
@@ -213,7 +251,7 @@
 .about__contacts{
     width: 100%;
     height: 100vh;
-    min-height: 770px;
+    min-height: 500px;
     position: relative;
     
     @include phone{
@@ -222,7 +260,7 @@
 }
 .contacts__block{
     position: absolute;
-    top: 100px;
+    top: 70px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -232,8 +270,13 @@
     border-radius: 4px;
 
     @include phone{
-        margin-top: 0;
+        top: 0;
         padding: 20px;
+        width: 100vw;
+    }
+    @include phone-landscape{
+        top: 0;
+        padding: 20px 20px 0 20px;
         width: 100vw;
     }
 }
@@ -244,6 +287,12 @@
         background-color: $gray-green;
     }
 }
+.contacts__contacts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .map{
     width: 100%;
@@ -254,18 +303,13 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 20;
+    z-index: 10;
     width: 40px;
     height: 40px;
 }
-.map__marker-vector{
-    z-index: 20;
-    width: 30px;
-    height: 30px;
-    fill: $gray-green;
-}
 
 .about__footer{
+    z-index: 20;
     position: absolute;
     bottom: 0;
     left: 0;

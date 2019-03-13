@@ -15,6 +15,10 @@
         align-items: center;
         padding: 15px;
     }
+
+    @include phone-landscape{
+        padding: 15px;
+    }
 }
 .footer__nav{
     display: flex;
@@ -47,6 +51,13 @@
         }
     }
 
+    @include phone-landscape{
+        margin-right: 10px;
+
+        &:last-of-type{
+            margin-right: 0;
+        }
+    }
 }
 .nav__link{
     color: $white;

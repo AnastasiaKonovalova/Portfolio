@@ -71,7 +71,7 @@ section{
 .wrapper{
     z-index: 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: 500px;
     position: relative;
     display: flex;
     align-items: center;
@@ -115,6 +115,14 @@ section{
             width: 56px;
         }
     }
+
+    @include phone-landscape{
+        font-size: 35px;
+        &::after{
+            width: 56px;
+            margin-top: 15px; 
+        }
+    }
 }
 
 .subtitle{
@@ -146,6 +154,14 @@ section{
             width: 56px;
         }
     }
+    @include phone-landscape{
+        font-size: 21px;
+        &::after{
+            width: 56px;
+            margin-top: 15px;
+        }
+    }
+
 }
 
 .background__text--white {

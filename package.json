@@ -5,6 +5,7 @@
   "main": "index.js",
   "private": true,
   "dependencies": {
+    "mapbox-gl": "^0.53.1",
     "normalize.css": "^8.0.1",
     "ramda": "^0.26.1"
   },

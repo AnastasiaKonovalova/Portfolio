@@ -1,68 +1,73 @@
-extends ../common.pug
-
-block title
+doctype html
+html
+    head
+    meta(charset = "utf-8")
+    meta(name="viewport", content="initial-scale=1.0, width=device-width")
+    link(rel="stylesheet", href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css")
     title About
+    body
+        div.wrapper
 
-block content
-    include ../../components/stack/stack.pug
-    include ../../components/enter_screen/enter_screen.pug
+            include ../../components/stack/stack.pug
+            include ../../components/enter_screen/enter_screen.pug
 
-    - var frontend=['HTML5', 'CSS', 'JavaScript']
-    - var backend=['PHP', 'MySQL', 'Node.js & npm', 'Mongo.db']
-    - var workflow=['git', 'webpack', 'gulp']
+            - var frontend=['HTML5', 'CSS', 'JavaScript']
+            - var backend=['PHP', 'MySQL', 'Node.js & npm', 'Mongo.db']
+            - var workflow=['git', 'webpack', 'gulp']
 
-    +enter_screen('Обо мне', 'about')
+            +enter_screen('Обо мне', 'about')
 
-    section.about__main
-        include ../../icons/header_triangles.svg
-        .column--left.column
-            .column__about-alignment
-                .about__title
-                    h2.about__title-text.title Кто я
-                    .about__title-img
+            section.about__main
+                include ../../icons/header_triangles.svg
+                .column--left.column
+                    .column__about-alignment
+                        .about__title
+                            h2.about__title-text.title Кто я
+                            .about__title-img
 
-                .about__info        
-                    .about__img
-                        img.about__pic(src=require("../../img/about_ava.JPG"))
+                        .about__info        
+                            .about__img
+                                img.about__pic(src=require("../../img/about_ava.JPG"))
 
-                    .about__description
-                        .description__text-block
-                            p.description__text Я веб разработчик из Новосибирска. Мне 27 лет. 
-                                |Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать 
-                                | интересные и современные проекты. 
-                            p.description__text Этот сайт я сделал в рамках обучения в 
-                                | Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. 
-                                | А пока посмотрите, как тут всё классно и красиво!
+                            .about__description
+                                .description__text-block
+                                    p.description__text Я веб разработчик из Новосибирска. Мне 27 лет. 
+                                        |Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать 
+                                        | интересные и современные проекты. 
+                                    p.description__text Этот сайт я сделал в рамках обучения в 
+                                        | Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. 
+                                        | А пока посмотрите, как тут всё классно и красиво!
 
-        .column--right.column
-            .column__skills-alignment
-                .skills__description
-                    h2.skills__title.subtitle Чем я могу быть вам полезна
-                    .skills__text Больше всего меня привлекает Frontend 
-                        | разработка, но я также знаком и могу решать не 
-                        | сложные задачи на Backend. Но давайте по порядку.                
-                .skills__main
-                    ul.stack__list
+                .column--right.column
+                    .column__skills-alignment
+                        .skills__description
+                            h2.skills__title.subtitle Чем я могу быть вам полезна
+                            .skills__text Больше всего меня привлекает Frontend 
+                                | разработка, но я также знаком и могу решать не 
+                                | сложные задачи на Backend. Но давайте по порядку.                
+                        .skills__main
+                            ul.stack__list
 
-                        li.stack__item
-                            .stack__name frontend
-                            .stack__techs
-                                +stack(frontend)
-                        li.stack__item
-                            .stack__name backend
-                            .stack__techs
-                                +stack(backend)
-                        li.stack__item
-                            .stack__name workflow
-                            .stack__techs
-                                +stack(workflow)
+                                li.stack__item
+                                    .stack__name frontend
+                                    .stack__techs
+                                        +stack(frontend)
+                                li.stack__item
+                                    .stack__name backend
+                                    .stack__techs
+                                        +stack(backend)
+                                li.stack__item
+                                    .stack__name workflow
+                                    .stack__techs
+                                        +stack(workflow)
 
 
-    section.about__contacts
-        .contacts__block
-            h2.contacts__title.subtitle Контакты
-            .contacts__contacts
-                include ../../components/contacts/contacts.pug
+            section.about__contacts
+                .contacts__block
+                    h2.contacts__title.subtitle Контакты
+                    .contacts__contacts
+                        include ../../components/contacts/contacts.pug
+                .map#mapContainer
 
-    .about__footer
-        include ../../components/footer/footer.pug
+            .about__footer
+                include ../../components/footer/footer.pug

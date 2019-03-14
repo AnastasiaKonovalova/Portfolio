@@ -11,13 +11,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 100;
-    display: none;
+    // z-index: 100;
+    // display: none;
     overflow-y: auto;
+    transition: z-index 1s;
 }
 .fullscreen--visible{
-    display: block;
-
+    z-index: 100;
 }
 
 #hamburger1{
@@ -74,7 +74,7 @@
     width: 100%;
 }
 .enter__arrow{
-    z-index: 10;
+    // z-index: 10;
     margin-bottom: 70px;
     position: absolute;
     bottom: 0;

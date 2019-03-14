@@ -9,6 +9,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+
+    @include phone{
+        min-width: 200px;
+    }
 }
 .author__img{
     background-image: url('../../img/ava.jpg');

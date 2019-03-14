@@ -38,6 +38,8 @@ body{
 }
 
 .entrance-block{
+    margin: auto;
+    
     @include phone-landscape{
         margin: 20px;
     }

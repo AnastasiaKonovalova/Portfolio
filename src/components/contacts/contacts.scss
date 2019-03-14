@@ -20,8 +20,10 @@
     }
 
     @include phone-landscape{
-        // margin-bottom: 0;
         min-width: 200px;
+        &:last-of-type{
+            margin-bottom: 20px;
+        }
     }
 }
 .contacts__vector{

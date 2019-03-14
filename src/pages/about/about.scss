@@ -19,6 +19,10 @@
         @include tablet{
             fill: #ebefe2;
         }
+
+        @include phone-landscape{
+            fill: #ebefe2;
+        }
     }
 }
 
@@ -30,6 +34,13 @@
         "about techs";
 
     @include tablet{
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    @include phone-landscape{
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
@@ -85,7 +96,6 @@
 
 }
 .about__info{
-    // width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,6 +238,14 @@
 
 .stack__list, .stack__item{
     @include tablet{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    @include phone-landscape{
         width: 100%;
         display: flex;
         flex-direction: column;

@@ -33,11 +33,21 @@
         width: 100%;
         margin: 0 25px;
     }
+
+    @include phone-landscape{
+        width: 100%;
+        margin: 0 25px;
+    }
 }
 .sidebar{
     width: 250px;
 
     @include tablet{
+        background-color: $light-green;
+        padding-top: 100px;
+        transition: left 0.5s;
+    }   
+    @include phone-landscape{
         background-color: $light-green;
         padding-top: 100px;
         transition: left 0.5s;
@@ -54,18 +64,24 @@
         top: -70px;
         left: -250px;
     }
+
+    @include phone-landscape{
+        top: -70px;
+        left: -250px;
+    }
 }
 .blog__sidebar--visible{
     @include tablet{
+        left: 0;
+    }
+
+    @include phone-landscape{
         left: 0;
     }
 }
 .blog__sidebar--fixed{
     position: fixed;
 
-    // .headers__list{
-    //     padding-right: 0;
-    // }
     .sidebar__button{
         left: 205px;
     }
@@ -86,13 +102,24 @@
         top: 50%;
         left: 190px;
     }
+
+    @include phone-landscape{
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $light-green;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 190px;
+    }
 }
 
 .headers__list{
     height: 100%;
     width: 100%;
     z-index: 10;
-    // padding-right: 17px;
     overflow-y: auto;
     overscroll-behavior-y: contain;
 }
@@ -107,6 +134,10 @@
     @include tablet{
         color: $white;
     }
+
+    @include phone-landscape{
+        color: $white;
+    }
 }
 .headers__item--active{
     padding: 12px 20px 12px 0;
@@ -114,6 +145,12 @@
     color: $green;
     
     @include tablet{
+        border: none;
+        font-weight: 500;
+        color: $white;
+    }
+
+    @include phone-landscape{
         border: none;
         font-weight: 500;
         color: $white;

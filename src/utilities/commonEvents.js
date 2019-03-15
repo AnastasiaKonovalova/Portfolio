@@ -11,21 +11,19 @@ export const initNavigationListeners = (firstSection) => {
     const navigation = document.querySelector('#menuNav');
 
     const showNavDisplay = () => {
-        // fullscreenNav.classList.add('fullscreen--visible');
         columnLeft.classList.add('menu__column--left--visible');
         columnRight.classList.add('menu__column--right--visible');
-        closeNavButton.classList.add('menu__button-close--visible');
+        closeNavButton.classList.add('menu__button--visible');
         navigation.classList.add('menu__nav--visible');
-        // wrapper.style.paddingRight = '16px';
+        showNavButton.classList.add('header__hamburger--hidden');
         document.body.style.overflow = 'hidden';
     };
     const hideNavDisplay = () => {
-        // fullscreenNav.classList.remove('fullscreen--visible');
         columnLeft.classList.remove('menu__column--left--visible');
         columnRight.classList.remove('menu__column--right--visible');
-        closeNavButton.classList.remove('menu__button-close--visible');
+        closeNavButton.classList.remove('menu__button--visible');
         navigation.classList.remove('menu__nav--visible');
-        // wrapper.style.paddingRight = '0';
+        showNavButton.classList.remove('header__hamburger--hidden');
         document.body.style.overflow = 'auto';
     };
     

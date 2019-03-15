@@ -9,22 +9,77 @@
     padding: 30px;
 }
 
-.hamburger__vector{
+.header__hamburger{
+    display: block;
+}
+.header__hamburger--hidden{
+    display: none;
+}
+
+.hamburger{
     width: 40px;
-    height: 40px;
-    fill: $white;
-    transition: 0.3s;
+    height: 35px;
+    transition: 0.3s;  
+    position: relative;
+    border-bottom: 4px solid $white;
 
     &:hover{
-        fill: $green
+        border-bottom: 4px solid $green;
+
+        &::after{
+            border-bottom: 4px solid $green;
+        }
+        &::before{
+            border-bottom: 4px solid $green;
+        }
+    }
+
+
+    &::after{
+        transition: 0.3s;  
+        content: '';
+        display: block;
+        width: 100%;
+        border-bottom: 4px solid $white;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &::before{
+        transition: 0.3s;  
+        content: '';
+        display: block;
+        width: 100%;
+        border-bottom: 4px solid $white;
+        position: absolute;
+        top: 50%;
+        left: 0;
     }
 
     @include tablet{
         width: 35px;
-        height: 35px;
+        height: 30px;     
     }
     @include phone{
         width: 25px;
-        height: 25px;
+        height: 20px;     
+        border-bottom: 2px solid $white;
+        &::after{
+            border-bottom: 2px solid $white;
+        }
+        &::before{
+            border-bottom: 2px solid $white;
+        }
+    }
+    @include phone-landscape{
+        width: 25px;
+        height: 20px; 
+        border-bottom: 2px solid $white;
+        &::after{
+            border-bottom: 2px solid $white;
+        }
+        &::before{
+            border-bottom: 2px solid $white;
+        }    
     }
 }

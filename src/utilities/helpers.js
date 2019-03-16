@@ -24,8 +24,6 @@ export class FormSyncValidator {
 
     _getInputs() {
         const [...elements] = this.form.elements;
-        // const inputs = [];
-        // const radios = [];
 
         elements.forEach(element => {
             if (element.tagName !== 'BUTTON') {
@@ -36,7 +34,6 @@ export class FormSyncValidator {
                 }
             }
         })
-        // return [...inputs, radios]
     }
 
     _validateRadios(radios) {
@@ -49,27 +46,17 @@ export class FormSyncValidator {
     }
 
     _validateInput(input) {
-        // if (input instanceof Array) {
-        //     if (input.length === 0) {
-        //         return
-        //     } else if ( !input.find(element => element.checked) ) {
-        //         return 'Подумайте, робот ли вы'
-        //     }
-
-        // } else {
-
-            if (input.value.trim() === '' || input.type === 'checkbox' && !input.checked) {
+        if (input.value.trim() === '' || input.type === 'checkbox' && !input.checked) {
+            input.classList.add('form__input--invalid');
+            return 'Нужно заполнить все поля'
+        } else {
+            if (input.id === 'inputMail' && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(input.value)) {
                 input.classList.add('form__input--invalid');
-                return 'Нужно заполнить все поля'
+                return 'Ваш e-mail не похож на общепринятый e-mail'
             } else {
-                if (input.id === 'inputMail' && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(input.value)) {
-                    input.classList.add('form__input--invalid');
-                    return 'Ваш e-mail не похож на общепринятый e-mail'
-                } else {
-                    return null
-                }
+                return null
             }
-        // }
+        }
     }
 
     _createErrorField(text) {
@@ -91,15 +78,16 @@ export class FormSyncValidator {
     validateForm() {
         this.removeErrorField();
         this.inputs.forEach(input => input.classList.remove('form__input--invalid'))
-
+        this.error = null;
         this.error = this.inputs.reduce((accum, input) => {
             if(!accum) {
                 return this._validateInput(input)
             } else {
                 return accum
             }
-        }, null);
-        const radioError = this._validateRadios(this.radios);
+        }, this.error);
+
+        const radioError = !this.error && this._validateRadios(this.radios);
         if (radioError) {
             this.error = radioError
         }

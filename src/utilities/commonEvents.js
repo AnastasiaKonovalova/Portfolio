@@ -35,4 +35,3 @@ export const initNavigationListeners = (firstSection) => {
 }
 
 
-// menu__button-close--visible

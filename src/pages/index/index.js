@@ -3,13 +3,24 @@ import './index.scss';
 import 'normalize.css';
 import test from '../../test';
 
+import { FormSyncValidator } from '../../utilities/helpers';
+
 console.log('index.js');
 test()
 
 const authButton = document.querySelector('#authButton');
 const flippedBlock = document.querySelector('#flippedBlock');
 const backToWelcome = document.querySelector('#backToWelcome');
-const formSubmit = document.querySelector('#formSubmit');
+const loginForm = document.querySelector('#loginForm');
+const submitButton = document.querySelector('#formSubmit');
+const formValidator = new FormSyncValidator(loginForm);
+
+submitButton.addEventListener('click', e => {
+    e.preventDefault();
+
+    formValidator.validateForm()
+});
+
 
 const flipAndChangeDisplay = () => {
     const classList = flippedBlock.classList;
@@ -57,8 +68,3 @@ if(window.innerWidth > 768){
 
     window.addEventListener('mousemove', moveLayers);
 }
-
-// const layers = document.querySelectorAll('.parallax__layer');
-
-
-// window.addEventListener('mousemove', moveLayers);

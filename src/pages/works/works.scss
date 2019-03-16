@@ -111,6 +111,19 @@
 }
 .comment__text{
     margin-bottom: 25px;
+    position: relative;
+}
+.comment__icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-40%);
+}
+.comment__vector{
+    width: 70px;
+    height: 70px;
+    transform: rotate(180deg);
+    fill: rgba($color: $light-green, $alpha: 0.1)
 }
 .comment__author{
     font-weight: 400;
@@ -133,7 +146,7 @@
     }
 }
 .blurred{
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
 
     .blur{
@@ -179,9 +192,13 @@
         background-color: $gray-green;
     }
 }
-.form__input{
-    width: 340px;
+.form__input-container{
+    position: relative;
     margin-bottom: 20px;
+}
+.form__input{
+    margin-bottom: 20px;
+    width: 340px;
     padding: 13px 20px;
     border-radius: 20px;
     font-weight: 300;
@@ -193,6 +210,9 @@
     @include phone{
         width: 270px;
     }
+}
+.form__input--invalid{
+    border: 1px solid $red;
 }
 .form__input--message{
     height: 140px;
@@ -254,5 +274,23 @@
         background-image: url('../../img/comments_bg_phone.jpg');
         background-position: center bottom;
         // background-position: center 90%;
+    }
+}
+
+
+.form__error{
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 4px;
+    background-color: $red;
+    color: $white;
+    margin-bottom: 20px;
+    max-width: 340px;
+    
+    @include tablet{
+        max-width: 300px;
+    }
+    @include phone{
+        max-width: 270px;
     }
 }

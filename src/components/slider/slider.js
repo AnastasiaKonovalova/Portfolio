@@ -35,14 +35,9 @@ const slideLink = document.querySelector('.works__link');
 const slideDown = document.querySelector('#slideDown');
 const slideUp = document.querySelector('#slideUp');
 
-let leftSlides = document.querySelectorAll('.slider__img--left');
-leftSlides = [...leftSlides];
-
-let rightSlides = document.querySelectorAll('.slider__img--right');
-rightSlides = [...rightSlides];
-
-let mainSlides = document.querySelectorAll('.works__img');
-mainSlides = [...mainSlides];
+const [...leftSlides] = document.querySelectorAll('.slider__img--left');
+const [...rightSlides] = document.querySelectorAll('.slider__img--right');
+const [...mainSlides] = document.querySelectorAll('.works__img');
 
 const mainSlideInfo = new WeakMap(
     mainSlides.map((slide, index) => [slide, WORKS[index]])

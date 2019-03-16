@@ -11,9 +11,9 @@ html
             include ../../components/stack/stack.pug
             include ../../components/enter_screen/enter_screen.pug
 
-            - var frontend=['HTML5', 'CSS', 'JavaScript']
-            - var backend=['PHP', 'MySQL', 'Node.js & npm', 'Mongo.db']
-            - var workflow=['git', 'webpack', 'gulp']
+            - var frontend=[{tech: 'HTML5', percent: 85}, {tech: 'CSS', percent: 70}, {tech: 'JavaScript', percent: 50}]
+            - var backend=[{tech: 'PHP', percent: 55}, {tech: 'MySQL', percent: 25}, {tech: 'Node.js & npm', percent: 10}, {tech: 'Mongo.db', percent: 5}]
+            - var workflow=[{tech: 'git', percent: 20}, {tech: 'webpack', percent: 45}, {tech: 'gulp', percent: 35}]
 
             +enter_screen('Обо мне', 'about')
 

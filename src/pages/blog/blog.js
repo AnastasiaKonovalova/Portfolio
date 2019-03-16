@@ -10,12 +10,9 @@ console.log('blog.js');
 const blogSection = document.querySelector('.blog');
 const sidebar = document.querySelector('.sidebar');
 const showSidebarButton = document.querySelector('#showSidebar');
-const maincontent = document.querySelector('.maincontent');
 
-let headers = document.querySelectorAll('.headers__item');
-headers = [...headers];
-let posts = document.querySelectorAll('.posts__item');
-posts = [...posts];
+const [...headers] = document.querySelectorAll('.headers__item');
+const [...posts] = document.querySelectorAll('.posts__item');
 
 const postsMap = new WeakMap(
     posts.map( (post, index) => [post, headers[index]] )
@@ -48,7 +45,7 @@ const manageSidebarGeometry = () => {
     };
     
     if(sidebarBottom <= 0){
-        sidebar.style.bottom = `${Math.abs(sidebarBottom) + 0.5}px`
+        sidebar.style.bottom = `${Math.abs(sidebarBottom) + 1}px`
     } else {
         sidebar.style.bottom = '0px';
     };
@@ -72,6 +69,9 @@ const swipe = () => {
             if (distantion > 0) {
                 sidebar.classList.remove('blog__sidebar--visible')
             } else {
+                if (!sidebar.classList.contains('blog__sidebar--fixed') ) {
+                    return
+                };
                 sidebar.classList.add('blog__sidebar--visible');
             }
         }

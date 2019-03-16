@@ -185,3 +185,24 @@ section{
         fill: rgba($color: #93c42e, $alpha: .2)
     }
 }
+
+.form__error{
+    text-align: center;
+    padding: 15px 20px;
+    border-radius: 4px;
+    background-color: $red;
+    color: $white;
+    margin-bottom: 20px;
+    max-width: 340px;
+    
+    @include tablet{
+        max-width: 300px;
+    }
+    @include phone{
+        max-width: 270px;
+    }
+}
+
+.form__input--invalid{
+    border: 1px solid $red;
+}

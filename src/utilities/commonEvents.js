@@ -1,9 +1,7 @@
 export const initNavigationListeners = (firstSection) => {
-    const wrapper = document.querySelector('#wrapper');
     const showNavButton = document.querySelector('#navButton');
     const closeNavButton = document.querySelector('#closeNavButton');
     const scrollDownButton = document.querySelector('#scrollDownButton');
-    const fullscreenNav = document.querySelector('.fullscreen');
 
 
     const columnLeft = document.querySelector('#columnLeft');

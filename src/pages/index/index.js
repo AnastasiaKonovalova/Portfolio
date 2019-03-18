@@ -1,8 +1,9 @@
 import '../common.scss';
 import './index.scss';
 import 'normalize.css';
+import '../../components/preloader/preloader';
 import { FormSyncValidator } from '../../utilities/helpers';
-import { Preloader } from '../../utilities/helpers';
+// import { Preloader } from '../../utilities/helpers';
 
 console.log('index.js');
 
@@ -36,22 +37,22 @@ authButton.addEventListener('click', flipAndChangeDisplay);
 backToWelcome.addEventListener('click', flipAndChangeDisplay);
 
 
-const wrapper = document.querySelector('#wrapper');
-const preloaderContainer = document.querySelector('#preloader');
+// const wrapper = document.querySelector('#wrapper');
+// const preloaderContainer = document.querySelector('#preloader');
 
-window.addEventListener('load', e => {
-    wrapper.removeChild(preloaderContainer);
-});
+// window.addEventListener('load', e => {
+//     wrapper.removeChild(preloaderContainer);
+// });
 
-document.addEventListener('DOMContentLoaded', e => {
-    const images = document.getElementsByTagName('img');
-    const svg = document.getElementsByTagName('svg');
-    const blocksWithBgImages = document.querySelectorAll('.has_bg_image');
-    const loadProgress = document.querySelector('.preloader__text');
+// document.addEventListener('DOMContentLoaded', e => {
+//     const images = document.getElementsByTagName('img');
+//     const svg = document.getElementsByTagName('svg');
+//     const blocksWithBgImages = document.querySelectorAll('.has_bg_image');
+//     const loadProgress = document.querySelector('.preloader__text');
 
-    const preloader = new Preloader(images, svg, blocksWithBgImages, loadProgress);
-    preloader.init()
-});
+//     const preloader = new Preloader(images, svg, blocksWithBgImages, loadProgress);
+//     preloader.init()
+// });
 
 
 const parallaxContainer = document.querySelector('#parallax');
@@ -72,7 +73,7 @@ if(window.innerWidth > 768){
     for(let i = 1; i < 4; i++){
         const img = document.createElement('img');
         img.className = 'parallax__img';
-        img.src = `../../img/layer_${i}.png`;
+        img.src = require(`../../img/layer_${i}.png`);
     
         const div = document.createElement('div');
         div.className = 'parallax__layer';

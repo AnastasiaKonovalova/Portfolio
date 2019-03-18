@@ -5,6 +5,7 @@ import '../../components/slider/slider';
 import { initNavigationListeners } from '../../utilities/commonEvents';
 import { FormSyncValidator } from '../../utilities/helpers';
 import '../../components/enter_screen/enter_screen';
+// import '../../components/preloader/preloader';
 
 console.log('works.js')
 

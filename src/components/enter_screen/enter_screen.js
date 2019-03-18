@@ -1,3 +1,5 @@
+import '../preloader/preloader';
+
 const centralInfo = document.querySelector('.author');
 const bgText = document.querySelector('.background__text');
 

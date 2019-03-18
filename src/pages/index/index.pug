@@ -9,7 +9,9 @@ block content
     - var layer3 = require('../../img/layer_3.png')
     include ../../icons/features.svg
 
-    .preloader#preloader.has_bg_image
+    include ../../components/preloader/preloader.pug
+
+    //- .preloader#preloader.has_bg_image
         .preloader__block
             .preloader__text 0
             .preloader__img

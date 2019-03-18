@@ -1,13 +1,13 @@
 @import '../../pages/mixins.scss';
 @import '../../pages/variables.scss';
 
-.menu{
-    min-height: 100%;
-    width: 100%;
-    position: relative;
+// .menu{
+//     min-height: 100%;
+//     width: 100%;
+//     position: relative;
 
-    overflow-x: hidden;
-}
+//     overflow-x: hidden;
+// }
 
 .menu__column{
 
@@ -105,9 +105,6 @@
         .menu-nav__item:nth-child(1){
             .menu-nav__link{
                 animation: appear 1.0s ease-out 1 normal;
-                // -webkit-animation: appear 1.2s linear 1 normal;
-                // -o-animation: appear 1.2s linear 1 normal;
-                // -moz-animation: appear 1.2s linear 1 normal;
             }
         }
         .menu-nav__item:nth-child(2){

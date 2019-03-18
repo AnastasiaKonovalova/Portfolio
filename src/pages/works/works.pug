@@ -5,7 +5,8 @@ block title
 
 block content
     include ../../icons/features.svg
-    //- include ../../icons/blur_filter.svg
+
+    //- include ../../components/preloader/preloader.pug
     include ../../components/enter_screen/enter_screen.pug
     +enter_screen('Мои работы', 'works')
     
@@ -13,7 +14,7 @@ block content
         include ../../icons/header_triangles.svg
         include ../../components/slider/slider.pug
             
-    .works__background
+    .works__background.has_bg_image
         section.comments
             h2.comments__title.title Что обо мне говорят
             ul.comments__list

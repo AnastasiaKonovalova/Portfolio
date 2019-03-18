@@ -4,7 +4,8 @@ include ../../icons/features.svg
 
 mixin enter_screen(title, page)
     section.enter
-        .enter__bg
+        include ../preloader/preloader.pug
+        .enter__bg.has_bg_image
         .enter__header
             include ../../components/header/header.pug
 
@@ -24,4 +25,5 @@ mixin enter_screen(title, page)
                 svg.arrow__vector
                     use(xlink:href="#arrow_down")
 
+    //- include ../preloader/preloader.pug
     include ../../components/fullscreen_nav/fullscreen_nav.pug

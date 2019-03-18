@@ -33,6 +33,11 @@
     }
 }
 
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .auth-form__inputs{
     display: flex;
     flex-direction: column;
@@ -89,31 +94,37 @@
 .auth-form__checkbox{
     position: absolute;
     visibility: hidden;
+
+    &:checked + .checkbox--styled{
+        .checkbox__vector{
+            display: block;
+        }
+    }
 }
-.styled-checkbox{
+.checkbox--styled{
     width: 20px;
     height: 20px;
     background-color: $green;
     border-radius: 2px;
     position: relative;
+    margin-right: 10px;
 }
-.styled-checkbox--checked{
-    .styled-checkbox__vector{
-        width: 10px;
-        height: 10px;
-        fill: $white;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%)
-    }
-}
-.styled-checkbox__vector{
+.checkbox__vector{
+    width: 10px;
+    height: 10px;
+    fill: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: none;
 }
+
 .checkbox__label{
     cursor: pointer;
-    margin-left: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 
@@ -132,16 +143,8 @@
 .radio__input{
     position: absolute;
     visibility: hidden;
-}
-.styled-radio{
-    width: 20px;
-    height: 20px;
-    background-color: $white;
-    border-radius: 50%;
-    position: relative;
-}
-.styled-radio--active{
-    &::after{
+
+    &:checked + .radio--styled::after{
         content: '';
         width: 8px;
         height: 8px;
@@ -150,11 +153,34 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%)
+        transform: translate(-50%, -50%);
     }
 }
+.radio--styled{
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 10px;
+}
+// .radio--styled--active{
+//     &::after{
+//         content: '';
+//         width: 8px;
+//         height: 8px;
+//         background-color: $green;
+//         border-radius: 50%;
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//     }
+// }
 .radio__label{
-    margin-left: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
     cursor: pointer;
 }
 

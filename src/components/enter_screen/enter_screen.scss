@@ -27,6 +27,18 @@
     left: 0;
     right: 0;
     bottom: 0;
+
+    @include tablet{
+        background-image: url('../../img/water_ipad.jpg');
+    }
+
+    @include phone{
+        background-image: url('../../img/water_phone.jpg');
+    }
+
+    @include phone-landscape{
+        background-image: url('../../img/water_phone.jpg');
+    }
 }
 .enter__img{
     position: absolute;

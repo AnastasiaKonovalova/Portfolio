@@ -15,21 +15,21 @@
                             use(xlink:href="#password")
 
             .auth-form__check
-                .styled-checkbox
-                    svg.styled-checkbox__vector
-                        use(xlink:href="#check")
                 label.checkbox__label.auth-form__label(for="inputCheck") Я человек
-                input#inputCheck.auth-form__checkbox(type="checkbox")
+                    input#inputCheck.auth-form__checkbox(type="checkbox")
+                    .checkbox--styled
+                        svg.checkbox__vector
+                            use(xlink:href="#check")
             .auth-form__question Вы точно не робот?
             .auth-form__radio
                 .radio__block.radio__block--left
-                    .styled-radio
                     label.radio__label.auth-form__label(for="radioYes") Да
-                    input#radioYes.radio__input(type="radio" name="robot")
+                        input#radioYes.radio__input(type="radio" name="robot")
+                        .radio--styled
                 .radio__block.radio__block--right
-                    .styled-radio
                     label.radio__label.auth-form__label(for="radioNo") Не уверен
-                    input#radioNo.radio__input(type="radio" name="robot") 
+                        input#radioNo.radio__input(type="radio" name="robot")
+                        .radio--styled
         .login__buttons.form__buttons
             button#backToWelcome(type="button").form__return.form__button На главную
             button#formSubmit(type="submit").form__submit.form__button Войти

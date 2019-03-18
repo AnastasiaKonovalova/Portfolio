@@ -2,21 +2,9 @@ import '../common.scss';
 import './index.scss';
 import 'normalize.css';
 import '../../components/preloader/preloader';
-import { FormSyncValidator } from '../../utilities/helpers';
-// import { Preloader } from '../../utilities/helpers';
+import '../../components/login_form/login_form';
 
 console.log('index.js');
-
-const loginForm = document.querySelector('#loginForm');
-const submitButton = document.querySelector('#formSubmit');
-
-const formValidator = new FormSyncValidator(loginForm);
-
-submitButton.addEventListener('click', e => {
-    e.preventDefault();
-    formValidator.validateForm()
-});
-
 
 const authButton = document.querySelector('#authButton');
 const flippedBlock = document.querySelector('#flippedBlock');
@@ -35,24 +23,6 @@ const flipAndChangeDisplay = () => {
 }
 authButton.addEventListener('click', flipAndChangeDisplay);
 backToWelcome.addEventListener('click', flipAndChangeDisplay);
-
-
-// const wrapper = document.querySelector('#wrapper');
-// const preloaderContainer = document.querySelector('#preloader');
-
-// window.addEventListener('load', e => {
-//     wrapper.removeChild(preloaderContainer);
-// });
-
-// document.addEventListener('DOMContentLoaded', e => {
-//     const images = document.getElementsByTagName('img');
-//     const svg = document.getElementsByTagName('svg');
-//     const blocksWithBgImages = document.querySelectorAll('.has_bg_image');
-//     const loadProgress = document.querySelector('.preloader__text');
-
-//     const preloader = new Preloader(images, svg, blocksWithBgImages, loadProgress);
-//     preloader.init()
-// });
 
 
 const parallaxContainer = document.querySelector('#parallax');

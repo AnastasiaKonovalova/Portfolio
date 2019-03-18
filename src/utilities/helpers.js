@@ -95,3 +95,35 @@ export class FormSyncValidator {
         this._createErrorField(this.error)
     }
 }
+
+export class Preloader {
+    constructor(images, svg, bgImages, textContainer) {
+        this.allImages = [...images, ...svg, ...this._createMockImagesFromBg(bgImages)];
+        this.textContainer = textContainer;
+    }
+
+    init(){
+        this.allImages.forEach(img => {
+            img.addEventListener('load', this._changeProgress(this.allImages))
+        })
+    }
+
+    _changeProgress(imgArr) {
+        return e => {
+            const percent = +this.textContainer.textContent;
+            this.textContainer.textContent = percent >= 98 ? '100' : `${ Math.round(percent + (100 / imgArr.length))}`;
+        }
+    } 
+    
+    _createMockImagesFromBg([...blocks]) {
+        const bgImages = blocks.reduce((accum, block) => {
+            const bgURL = window.getComputedStyle(block).backgroundImage;
+            if (bgURL !== 'none') {
+                const mockImg = new Image();
+                mockImg.src = bgURL.slice(5, -2)
+                return [...accum, mockImg]
+            } else {return accum}
+        }, []);
+        return bgImages
+    }
+}

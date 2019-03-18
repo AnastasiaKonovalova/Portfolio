@@ -1,26 +1,25 @@
 import '../common.scss';
 import './index.scss';
 import 'normalize.css';
-import test from '../../test';
-
 import { FormSyncValidator } from '../../utilities/helpers';
+import { Preloader } from '../../utilities/helpers';
 
 console.log('index.js');
-test()
 
-const authButton = document.querySelector('#authButton');
-const flippedBlock = document.querySelector('#flippedBlock');
-const backToWelcome = document.querySelector('#backToWelcome');
 const loginForm = document.querySelector('#loginForm');
 const submitButton = document.querySelector('#formSubmit');
+
 const formValidator = new FormSyncValidator(loginForm);
 
 submitButton.addEventListener('click', e => {
     e.preventDefault();
-
     formValidator.validateForm()
 });
 
+
+const authButton = document.querySelector('#authButton');
+const flippedBlock = document.querySelector('#flippedBlock');
+const backToWelcome = document.querySelector('#backToWelcome');
 
 const flipAndChangeDisplay = () => {
     const classList = flippedBlock.classList;
@@ -33,10 +32,26 @@ const flipAndChangeDisplay = () => {
         window.scrollTo(0, 0);
     }
 }
-
 authButton.addEventListener('click', flipAndChangeDisplay);
 backToWelcome.addEventListener('click', flipAndChangeDisplay);
 
+
+const wrapper = document.querySelector('#wrapper');
+const preloaderContainer = document.querySelector('#preloader');
+
+window.addEventListener('load', e => {
+    wrapper.removeChild(preloaderContainer);
+});
+
+document.addEventListener('DOMContentLoaded', e => {
+    const images = document.getElementsByTagName('img');
+    const svg = document.getElementsByTagName('svg');
+    const blocksWithBgImages = document.querySelectorAll('.has_bg_image');
+    const loadProgress = document.querySelector('.preloader__text');
+
+    const preloader = new Preloader(images, svg, blocksWithBgImages, loadProgress);
+    preloader.init()
+});
 
 
 const parallaxContainer = document.querySelector('#parallax');
@@ -68,3 +83,4 @@ if(window.innerWidth > 768){
 
     window.addEventListener('mousemove', moveLayers);
 }
+

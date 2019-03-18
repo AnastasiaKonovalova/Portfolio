@@ -7,7 +7,13 @@ block content
     - var layer1 = require('../../img/layer_1.png')
     - var layer2 = require('../../img/layer_2.png')
     - var layer3 = require('../../img/layer_3.png')
+    include ../../icons/features.svg
 
+    .preloader#preloader.has_bg_image
+        .preloader__block
+            .preloader__text 0
+            .preloader__img
+                include ../../icons/forest.svg
     .parallax#parallax
     .auth
         button#authButton.auth__button.button Авторизоваться

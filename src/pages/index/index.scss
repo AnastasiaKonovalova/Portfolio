@@ -11,6 +11,65 @@ body{
     }
 }
 
+.preloader{
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $light-green;
+    background-image: url('../../img/forest_prel_bg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.preloader__block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.preloader__text{
+    text-align: center;
+    color: $white;
+}
+.preloader__vector{
+    width: 100px;
+    height: 80px;
+    stroke: $white;
+    stroke-dasharray: 80 70;
+}
+
+
+@keyframes move1{
+    0% {
+        stroke-dashoffset: 60;
+    }
+
+    100% {
+        stroke-dashoffset: 210;
+    }
+}
+
+.preloader__1{
+    stroke: $white;
+    animation: move1 1.2s cubic-bezier(.6,.11,.35,.92) infinite reverse;
+}
+.preloader__2{
+    stroke: $white;
+    animation: move1 1.2s cubic-bezier(.6,.11,.35,.92) 0.2s infinite reverse;
+
+}
+.preloader__3{
+    stroke: $white;
+    animation: move1 1.2s cubic-bezier(.6,.11,.35,.92) 0.4s infinite reverse;
+}
+
+
 .parallax{
     width: 100%;
     height: 100%;

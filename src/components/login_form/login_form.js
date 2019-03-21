@@ -1,5 +1,5 @@
 import './login_form.scss';
-import { FormSyncValidator } from '../../utilities/helpers';
+import { FormSyncValidator } from '../form_validation/form_validator';
 
 
 const loginForm = document.querySelector('#loginForm');
@@ -10,19 +10,3 @@ submitButton.addEventListener('click', e => {
     e.preventDefault();
     formValidator.validateForm()
 });
-
-
-// const checkboxLabel = document.querySelector('.checkbox__label');
-// const radioLabel = document.querySelector('.radio__label');
-
-// loginForm.addEventListener('click', e => {
-//     const target = e.target;
-//     if (target.classList.contains('checkbox__label')){
-//         target.firstElementChild.classList.toggle('styled-checkbox--checked');
-//     };
-//     if (target.classList.contains('radio__label')){
-//         console.log(target.lastElementChild.checked)
-//     }
-    
-// });
-

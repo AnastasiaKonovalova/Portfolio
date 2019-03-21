@@ -3,6 +3,7 @@
 @import '../../components/enter_screen/enter_screen.scss';
 @import '../../components/slider/slider.scss';
 @import '../../components/footer/footer.scss';
+@import '../../components/form_validation/validation_styles.scss';
 
 .works{
     position: relative;
@@ -173,7 +174,14 @@
         margin-bottom: 40px;
     }
 }
-.form, .form__inputs{
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.form__inputs{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -181,6 +189,7 @@
 }
 .form__inputs{
     padding: 0 12px;
+    margin-bottom: 20px;
 }
 .form__title{
     padding-top: 40px;
@@ -198,6 +207,7 @@
 }
 .form__input{
     margin-bottom: 20px;
+    border: 1px solid transparent;
     width: 340px;
     padding: 13px 20px;
     border-radius: 20px;
@@ -210,9 +220,6 @@
     @include phone{
         width: 270px;
     }
-}
-.form__input--invalid{
-    border: 1px solid $red;
 }
 .form__input--message{
     height: 140px;
@@ -273,24 +280,9 @@
     @include phone{
         background-image: url('../../img/comments_bg_phone.jpg');
         background-position: center bottom;
-        // background-position: center 90%;
     }
 }
 
-
-.form__error{
-    text-align: center;
-    padding: 15px 20px;
-    border-radius: 4px;
-    background-color: $red;
-    color: $white;
-    margin-bottom: 20px;
-    max-width: 340px;
-    
-    @include tablet{
-        max-width: 300px;
-    }
-    @include phone{
-        max-width: 270px;
-    }
+.form__input--invalid{
+    border: 1px solid $red;
 }

@@ -1,0 +1,19 @@
+.form__error{
+    text-align: center;
+    color: $red;
+    max-width: 340px;
+
+    position: absolute;
+    bottom: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    
+    @include tablet{
+        max-width: 300px;
+    }
+    @include phone{
+        max-width: 270px;
+    }
+}
+

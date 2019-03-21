@@ -3,9 +3,8 @@ import '../common.scss';
 import './works.scss';
 import '../../components/slider/slider';
 import { initNavigationListeners } from '../../utilities/commonEvents';
-import { FormSyncValidator } from '../../utilities/helpers';
+import { FormSyncValidator } from '../../components/form_validation/form_validator';
 import '../../components/enter_screen/enter_screen';
-// import '../../components/preloader/preloader';
 
 console.log('works.js')
 

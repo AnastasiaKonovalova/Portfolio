@@ -1,11 +1,13 @@
 @import '../../pages/variables.scss';
 @import '../../pages/mixins.scss';
+@import '../form_validation/validation_styles.scss';
 
 .login{
     background-color: rgba($color: #122620, $alpha: 0.6);
     border-radius: 4px;
 }
 .login__main{
+    width: 100%;
     margin: 40px auto;
     display: flex;
     flex-direction: column;
@@ -43,7 +45,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 20px;
 
     @include phone{
         padding: 0 15px;
@@ -54,6 +55,7 @@
     margin-bottom: 20px;
 }
 .auth-form__input{
+    border: 1px solid transparent;
     width: 340px;
     padding: 13px 20px 13px 60px;
     border-radius: 20px;
@@ -164,19 +166,6 @@
     position: relative;
     margin-right: 10px;
 }
-// .radio--styled--active{
-//     &::after{
-//         content: '';
-//         width: 8px;
-//         height: 8px;
-//         background-color: $green;
-//         border-radius: 50%;
-//         position: absolute;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//     }
-// }
 .radio__label{
     display: flex;
     flex-direction: row-reverse;
@@ -216,4 +205,8 @@
     @include phone{
         padding: 15px;
     }
+}
+
+.form__input--invalid{
+    border: 1px solid $red;
 }

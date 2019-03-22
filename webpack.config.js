@@ -1,7 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ClearWebpackPlugin = require('clean-webpack-plugin');
-// const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const merge = require('webpack-merge');
 
 const prod = require('./webpack/production.config');
@@ -27,22 +26,22 @@ const common = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index'],
-      template: PATHS.source + '/pages/index/index.pug',
+      template: PATHS.source + '/pages/index/index.pug'
     }),
     new HtmlWebpackPlugin({
       filename: 'about.html',
       chunks: ['about'],
-      template: PATHS.source + '/pages/about/about.pug',
+      template: PATHS.source + '/pages/about/about.pug'
     }),
     new HtmlWebpackPlugin({
       filename: 'works.html',
       chunks: ['works'],
-      template: PATHS.source + '/pages/works/works.pug',
+      template: PATHS.source + '/pages/works/works.pug'
     }),
     new HtmlWebpackPlugin({
       filename: 'blog.html',
       chunks: ['blog'],
-      template: PATHS.source + '/pages/blog/blog.pug',
+      template: PATHS.source + '/pages/blog/blog.pug'
     }),
     new ClearWebpackPlugin('build')
   ],
@@ -68,33 +67,33 @@ const common = {
       {
         test: /\.(jpe?g|png|gif|svg|eot|ttf|woff|woff2)$/i,
         use: [
-            {
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]',
-                    outputPath: 'img'
-                }
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img'
             }
+          }
         ]
       }
     ]
   }
-}
+};
 
-module.exports = function(env) {
+module.exports = function (env) {
   if (env === 'production') {
     return merge([
       common,
       prod()
-    ])
+    ]);
   }
   if (env === 'development') {
     return merge([
       common,
       dev()
-    ])
+    ]);
   }
-}
+};
 
 // module.exports = {
 //   entry: {
@@ -152,7 +151,7 @@ module.exports = function(env) {
 //             options: {
 //               publicPath: '../'
 //             }
-//           }, 
+//           },
 //           'css-loader',
 //           {
 //             loader: 'postcss-loader',

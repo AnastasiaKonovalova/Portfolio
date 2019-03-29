@@ -1,188 +1,190 @@
 @import "./fonts.scss";
 @import "./variables.scss";
-@import './mixins.scss';
+@import "./mixins.scss";
 
-*{
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-// html{
-//     height: 100%;
-// }
+body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  font-family: "roboto", "Arial", "sans-serif";
+  font-weight: 400;
+  font-size: 16px;
+  color: $gray-green;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  position: relative;
+  line-height: 1;
 
-body{
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    font-family: 'roboto', 'Arial', 'sans-serif';
-    font-weight: 400;
-    font-size: 16px;
-    color: $gray-green;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: antialiased;
-    position: relative;
-    line-height: 1;
-
-    @include tv{
-        font-size: 18px;
-    }
-    @include tablet{
-        font-size: 14px;
-    }
-    @include phone{
-        font-size: 13px;
-    }
+  @include tv {
+    font-size: 18px;
+  }
+  @include tablet {
+    font-size: 14px;
+  }
+  @include phone {
+    font-size: 13px;
+  }
 }
 
-button{
-    border: none;
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+}
+
+ul,
+nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input,
+textarea {
+  border: none;
+
+  &:focus {
     outline: none;
-    background: none;
-    cursor: pointer;
-    display: flex;
-    padding: 0;
-}
-  
-ul, nav{
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  }
 }
 
-p, h1, h2, h3, h4, h5, h6{
-    margin: 0;
+section {
+  width: 100%;
 }
 
-a{
-    text-decoration: none;
-    color: black;
+.wrapper {
+  overflow-x: hidden;
+
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  @include phone-landscape {
+    min-height: 500px;
+  }
 }
 
-input, textarea{
-    border: none;
+#svg-sprite {
+  display: none;
+}
 
-    &:focus{
-        outline: none;
+.central__block {
+  margin: auto;
+}
+
+.title {
+  font-family: "Sansus-Webissimo", "Arial", "sans-serif";
+  font-size: 63px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:after {
+    content: "";
+    height: 3px;
+    width: 90px;
+    margin-top: 30px;
+    transition: 0.4s;
+  }
+  @include tablet {
+    font-size: 50px;
+    &::after {
+      margin-top: 20px;
+      height: 2px;
     }
-}
-
-section{
-    width: 100%;
-}
-
-.wrapper{
-    overflow-x: hidden;
-
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-
-    @include phone-landscape{
-        min-height: 500px;
-    }
-}
-
-#svg-sprite{
-    display: none;
-}
-
-.central__block{
-    margin: auto;
-}
-
-.title{
-    font-family: 'Sansus-Webissimo', 'Arial', 'sans-serif';
-    font-size: 63px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &:after{
-        content: '';
-        height: 3px;
-        width: 90px;
-        margin-top: 30px; 
-        transition: 0.4s;
-    }
-    @include tablet{
-        font-size: 50px;
-        &::after{
-            margin-top: 20px;
-            height: 2px;
-        }
-    }
-    @include phone{
-        font-size: 35px;
-        &::after{
-            width: 56px;
-        }
-    }
-
-    @include phone-landscape{
-        font-size: 35px;
-        &::after{
-            width: 56px;
-            margin-top: 15px; 
-        }
-    }
-}
-
-.subtitle{
-    font-family: 'Sansus-Webissimo', 'Arial', 'sans-serif';
+  }
+  @include phone {
     font-size: 35px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    &::after {
+      width: 56px;
+    }
+  }
 
-    &:after{
-        content: '';
-        height: 3px;
-        width: 90px;
-        margin-top: 30px;
-        transition: 0.4s;
+  @include phone-landscape {
+    font-size: 35px;
+    &::after {
+      width: 56px;
+      margin-top: 15px;
     }
+  }
+}
 
-    @include tablet{
-        font-size: 30px;
-        &::after{
-            height: 2px;
-            margin-top: 20px;
-        }
-    }
-    @include phone{
-        font-size: 21px;
-        &::after{
-            width: 56px;
-        }
-    }
-    @include phone-landscape{
-        font-size: 21px;
-        &::after{
-            width: 56px;
-            margin-top: 15px;
-        }
-    }
+.subtitle {
+  font-family: "Sansus-Webissimo", "Arial", "sans-serif";
+  font-size: 35px;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  &:after {
+    content: "";
+    height: 3px;
+    width: 90px;
+    margin-top: 30px;
+    transition: 0.4s;
+  }
+
+  @include tablet {
+    font-size: 30px;
+    &::after {
+      height: 2px;
+      margin-top: 20px;
+    }
+  }
+  @include phone {
+    font-size: 21px;
+    &::after {
+      width: 56px;
+    }
+  }
+  @include phone-landscape {
+    font-size: 21px;
+    &::after {
+      width: 56px;
+      margin-top: 15px;
+    }
+  }
 }
 
 .background__text--white {
-    .background__vector{
-        fill: rgba($color: $white, $alpha: .2)
-    }
+  .background__vector {
+    fill: rgba($color: $white, $alpha: 0.2);
+  }
 }
 .background__text--green {
-    .background__vector{
-        fill: rgba($color: #93c42e, $alpha: .2)
-    }
+  .background__vector {
+    fill: rgba($color: #93c42e, $alpha: 0.2);
+  }
 }
-

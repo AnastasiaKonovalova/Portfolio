@@ -13,19 +13,8 @@ block content
         include ../../icons/header_triangles.svg
         aside.blog__sidebar.sidebar
             button#showSidebar.sidebar__button
-            ul.headers.headers__list
-                each val in articles
-                    li.headers__item
-                        a(href=`#${val.title}`).headers__link=val.title
+            include ../../components/headers_list/headers_list.pug
         .maincontent
-            ul.posts.posts__list
-                each val in articles
-                    li.posts__item.post 
-                        a(name=`${val.title}`)
-                        h3.post__title=val.title
-                        .post__date=val.date
-                        .post__text=val.text
-                        //- .post__img
-                            img.post__pic(src=require(val.img))
+            include ../../components/articles_list/articles_list.pug
 
     include ../../components/footer/footer.pug

@@ -1,11 +1,12 @@
 footer.footer
-    -var nav = {works: 'Мои работы', about: 'Обо мне', blog: 'Блог', index: 'Авторизация'}
+    -var nav=[{text:'Мои работы', url: 'works.html'}, {text: 'Обо мне', url: 'about.html'}, {text: 'Блог', url: 'blog.html'}, {text: 'На главную', url: 'index.html'}]
+
     .footer__nav
         .nav__block
             ul.nav__list.nav
-                each value, key in nav
+                each value in nav
                     li.nav__item
-                        a(href=`${key}.html`).nav__link= value
+                        a(href=value.url).nav__link= value.text
 
         .nav__socials
             +socials('rgba-white') 

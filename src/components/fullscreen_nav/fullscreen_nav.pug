@@ -1,4 +1,5 @@
--var nav = {works: 'Мои работы', about: 'Обо мне', blog: 'Блог', index: 'Авторизация'}
+-var nav=[{text:'Мои работы', url: 'works.html'}, {text: 'Обо мне', url: 'about.html'}, {text: 'Блог', url: 'blog.html'}, {text: 'На главную', url: 'index.html'}]
+
 include ../../icons/features.svg
 
 #columnLeft.menu__column.menu__column--left
@@ -8,9 +9,9 @@ include ../../icons/features.svg
 
 #menuNav.menu__nav
     ul.menu-nav
-        each value, key in nav
+        each value in nav
             li.menu-nav__item
-                a(href=`${key}.html`).menu-nav__link.title= value
+                a(href=value.url).menu-nav__link.title= value.text
 
 .menu__button#closeNavButton
     button.menu__button-close.close-btn

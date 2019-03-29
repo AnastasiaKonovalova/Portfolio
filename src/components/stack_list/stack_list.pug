@@ -1,0 +1,21 @@
+- var frontend=[{tech: 'HTML5', percent: 85}, {tech: 'CSS', percent: 70}, {tech: 'JavaScript', percent: 50}]
+- var backend=[{tech: 'PHP', percent: 55}, {tech: 'MySQL', percent: 25}, {tech: 'Node.js & npm', percent: 10}, {tech: 'Mongo.db', percent: 5}]
+- var workflow=[{tech: 'git', percent: 20}, {tech: 'webpack', percent: 45}, {tech: 'gulp', percent: 35}]
+
+include ../../components/stack/stack.pug
+
+ul.stack__list
+
+    li.stack__item
+        .stack__name frontend
+        .stack__techs
+            +stack(frontend)
+    li.stack__item
+        .stack__name backend
+        .stack__techs
+            +stack(backend)
+    li.stack__item
+        .stack__name workflow
+        .stack__techs
+            +stack(workflow)
+

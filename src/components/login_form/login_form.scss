@@ -1,212 +1,210 @@
-@import '../../pages/variables.scss';
-@import '../../pages/mixins.scss';
-@import '../form_validation/validation_styles.scss';
+@import "../../pages/variables.scss";
+@import "../../pages/mixins.scss";
+@import "../form_validation/validation_styles.scss";
 
-.login{
-    background-color: rgba($color: #122620, $alpha: 0.6);
-    border-radius: 4px;
+.login {
+  background-color: rgba($color: #122620, $alpha: 0.6);
+  border-radius: 4px;
 }
-.login__main{
-    width: 100%;
-    margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.login__main {
+  width: 100%;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    @include phone-landscape{
-        margin: 20px auto;
+  @include phone-landscape {
+    margin: 20px auto;
+  }
+}
+
+.login__title {
+  color: $white;
+  margin-bottom: 30px;
+  font-weight: 300;
+
+  &::after {
+    background-color: $white;
+  }
+  @include phone {
+    font-size: 30px;
+  }
+  @include phone-landscape {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.auth-form__inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include phone {
+    padding: 0 15px;
+  }
+}
+.auth-form__row {
+  position: relative;
+  margin-bottom: 20px;
+}
+.auth-form__input {
+  border: 1px solid transparent;
+  width: 340px;
+  padding: 13px 20px 13px 60px;
+  border-radius: 20px;
+  font-weight: 300;
+
+  @include tablet {
+    width: 300px;
+  }
+  @include phone {
+    width: 260px;
+  }
+}
+.auth-form__icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+.auth-form__vector {
+  width: 15px;
+  height: 15px;
+  fill: $light-gray;
+}
+
+.auth-form__label {
+  color: $white;
+}
+.auth-form__question {
+  color: $white;
+  font-weight: 500;
+}
+
+.auth-form__check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.auth-form__checkbox {
+  position: absolute;
+  visibility: hidden;
+
+  &:checked + .checkbox--styled {
+    .checkbox__vector {
+      display: block;
     }
+  }
+}
+.checkbox--styled {
+  width: 20px;
+  height: 20px;
+  background-color: $green;
+  border-radius: 2px;
+  position: relative;
+  margin-right: 10px;
+}
+.checkbox__vector {
+  width: 10px;
+  height: 10px;
+  fill: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
 }
 
-.login__title{
-    color: $white;
-    margin-bottom: 30px;
-    font-weight: 300;
-
-    &::after{
-        background-color: $white;
-    }
-    @include phone{
-        font-size: 30px;
-    }
-    @include phone-landscape{
-        font-size: 30px;
-        margin-bottom: 15px;
-    }
+.checkbox__label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
 }
 
-.auth-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.auth-form__inputs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    @include phone{
-        padding: 0 15px;
-    }
-}
-.auth-form__row{
-    position: relative;
-    margin-bottom: 20px;
-}
-.auth-form__input{
-    border: 1px solid transparent;
-    width: 340px;
-    padding: 13px 20px 13px 60px;
-    border-radius: 20px;
-    font-weight: 300;
-
-    @include tablet{
-        width: 300px;
-    }
-    @include phone{
-        width: 260px;
-    }
-}
-.auth-form__icon{
-    position: absolute;
-    top: 50%;
-    left: 15px;
-    transform: translateY(-50%)
-}
-.auth-form__vector{
-    width: 15px;
-    height: 15px;
-    fill: $light-gray;
+.auth-form__question {
+  margin-bottom: 10px;
 }
 
-.auth-form__label{
-    color: $white;   
+.auth-form__radio,
+.radio__block {
+  display: flex;
+  align-items: center;
 }
-.auth-form__question{
-    color: $white;  
-    font-weight: 500; 
+.radio__block--left {
+  margin-right: 40px;
 }
+.radio__input {
+  position: absolute;
+  visibility: hidden;
 
-.auth-form__check{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-.auth-form__checkbox{
-    position: absolute;
-    visibility: hidden;
-
-    &:checked + .checkbox--styled{
-        .checkbox__vector{
-            display: block;
-        }
-    }
-}
-.checkbox--styled{
-    width: 20px;
-    height: 20px;
+  &:checked + .radio--styled::after {
+    content: "";
+    width: 8px;
+    height: 8px;
     background-color: $green;
-    border-radius: 2px;
-    position: relative;
-    margin-right: 10px;
-}
-.checkbox__vector{
-    width: 10px;
-    height: 10px;
-    fill: $white;
+    border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: none;
+  }
+}
+.radio--styled {
+  width: 20px;
+  height: 20px;
+  background-color: $white;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 10px;
+}
+.radio__label {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  cursor: pointer;
 }
 
-.checkbox__label{
-    cursor: pointer;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
+.form__buttons {
+  background-color: $light-green;
+  border-radius: 0 0 4px 4px;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
+.form__button {
+  padding: 15px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  transition: 0.3s;
 
+  &:hover {
+    background-color: $green;
+  }
+  &:first-of-type {
+    border-radius: 0 0 0 4px;
+    border-right: 1.5px solid #a0b99e;
+  }
+  &:last-of-type {
+    border-radius: 0 0 4px 0;
+  }
 
-.auth-form__question{
-    margin-bottom: 10px;
-}
-
-
-.auth-form__radio, .radio__block{
-    display: flex;
-    align-items: center;
-}
-.radio__block--left{
-    margin-right: 40px;
-}
-.radio__input{
-    position: absolute;
-    visibility: hidden;
-
-    &:checked + .radio--styled::after{
-        content: '';
-        width: 8px;
-        height: 8px;
-        background-color: $green;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-.radio--styled{
-    width: 20px;
-    height: 20px;
-    background-color: $white;
-    border-radius: 50%;
-    position: relative;
-    margin-right: 10px;
-}
-.radio__label{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    cursor: pointer;
-}
-
-
-
-.form__buttons{
-    background-color: $light-green;
-    border-radius: 0 0 4px 4px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-.form__button{
+  @include phone {
     padding: 15px;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: $white;
-    transition: 0.3s;
-
-    &:hover{
-        background-color: $green;
-    };   
-    &:first-of-type{
-        border-radius: 0 0 0 4px;
-        border-right: 1.5px solid #a0b99e;
-    };
-    &:last-of-type{
-        border-radius: 0 0 4px 0;
-    }
-
-    @include phone{
-        padding: 15px;
-    }
+  }
 }
 
-.form__input--invalid{
-    border: 1px solid $red;
+.form__input--invalid {
+  border: 1px solid $red;
 }

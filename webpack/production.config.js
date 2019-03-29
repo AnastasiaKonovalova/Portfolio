@@ -1,8 +1,8 @@
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const MiniCSSExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
-module.exports = function () {
+module.exports = function() {
   return {
     optimization: {
       minimizer: [
@@ -16,10 +16,10 @@ module.exports = function () {
     },
     plugins: [
       new MiniCSSExtractPlugin({
-        filename: './css/[name].css'
+        filename: "./css/[name].css"
       })
     ],
-    mode: 'production',
+    mode: "production",
     module: {
       rules: [
         {
@@ -28,26 +28,28 @@ module.exports = function () {
             {
               loader: MiniCSSExtractPlugin.loader,
               options: {
-                publicPath: '../'
+                publicPath: "../"
               }
             },
-            'css-loader',
+            "css-loader",
             {
-              loader: 'postcss-loader',
+              loader: "postcss-loader",
               options: {
-                plugins: () => [require('autoprefixer')({
-                  'browsers': ['> 1%', 'last 2 versions']
-                })]
+                plugins: () => [
+                  require("autoprefixer")({
+                    browsers: ["> 1%", "last 2 versions"]
+                  })
+                ]
               }
             },
-            'sass-loader'
+            "sass-loader"
           ]
         },
         {
           test: /\.(jpe?g|png|gif|svg|eot|ttf|woff|woff2)$/i,
           use: [
             {
-              loader: 'image-webpack-loader',
+              loader: "image-webpack-loader",
               options: {
                 mozjpeg: {
                   progressive: true,
@@ -57,7 +59,7 @@ module.exports = function () {
                   enabled: true
                 },
                 pngquant: {
-                  quality: '65-90',
+                  quality: "65-90",
                   speed: 4
                 },
                 gifsicle: {

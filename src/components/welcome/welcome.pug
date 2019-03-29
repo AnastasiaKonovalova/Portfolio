@@ -1,7 +1,7 @@
 include ../../components/author/author.pug
 include ../../components/socials_list/socials_list.pug
 
--var nav={works: 'Мои работы', about: 'Обо мне', blog: 'Блог'}
+-var nav=[{text:'Мои работы', url: 'works.html'}, {text: 'Обо мне', url: 'about.html'}, {text: 'Блог', url: 'blog.html'}]
 
 .welcome
     .welcome__info
@@ -10,6 +10,6 @@ include ../../components/socials_list/socials_list.pug
         +socials('rgba')
 
     nav.welcome__nav
-        each value, key in nav
+        each value in nav
             li.welcome__nav-item
-                a(href=`${key}.html`).welcome__nav-link= value
+                a(href=value.url).welcome__nav-link= value.text

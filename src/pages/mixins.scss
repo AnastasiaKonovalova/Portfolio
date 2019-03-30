@@ -1,43 +1,40 @@
-@import './variables.scss';
+@import "./variables.scss";
 
-@function rem($px) {
-    @return $px / 16px+0rem;
+@mixin tv {
+  @media screen and (min-width: $tv) {
+    @content;
+  }
 }
-@mixin tv{
-    @media screen and (min-width: $tv) {
-        @content;
-    }
-}
-@mixin desktop{
-    @media screen and (max-width: $desktop) {
-        @content;
-    }
+@mixin desktop {
+  @media screen and (max-width: $desktop) {
+    @content;
+  }
 }
 
-@mixin tablet{
-    @media screen and (max-width: $tablet) {
-        @content;
-    }
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
 }
 
-@mixin phone{
-    @media screen and (max-width: $phone) {
-        @content;
-    }
+@mixin phone {
+  @media screen and (max-width: $phone) {
+    @content;
+  }
 }
-@mixin phone-landscape{
-    @media screen and (max-height: $phone) and (orientation: landscape){
-        @content;
-    }
+@mixin phone-landscape {
+  @media screen and (max-height: $phone) and (orientation: landscape) {
+    @content;
+  }
 }
-@mixin miniphone{
-    @media screen and (max-width: $miniphone) {
-        @content;
-    }
+@mixin miniphone {
+  @media screen and (max-width: $miniphone) {
+    @content;
+  }
 }
 
-@mixin smallheight{
-  @media screen and (max-height: $smallheight){
-      @content;
+@mixin smallheight {
+  @media screen and (max-height: $smallheight) {
+    @content;
   }
 }

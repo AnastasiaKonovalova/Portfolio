@@ -1,5 +1,5 @@
 .login
-    form#loginForm.login__form.auth-form
+    form#loginForm.login__form.auth-form(method='POST')
         .login__main
             h2.login__title.subtitle Авторизуйтесь
             .auth-form__inputs
@@ -31,5 +31,5 @@
                         input#radioNo.radio__input(type="radio" name="robot")
                         .radio--styled
         .login__buttons.form__buttons
-            button#backToWelcome(type="button").form__return.form__button На главную
+            button#backToWelcome(type="reset").form__return.form__button На главную
             button#formSubmit(type="submit").form__submit.form__button Войти

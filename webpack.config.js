@@ -34,14 +34,14 @@ const common = {
       template: PATHS.source + "/pages/about/about.pug"
     }),
     new HtmlWebpackPlugin({
-      filename: "works.html",
-      chunks: ["works"],
-      template: PATHS.source + "/pages/works/works.pug"
-    }),
-    new HtmlWebpackPlugin({
       filename: "blog.html",
       chunks: ["blog"],
       template: PATHS.source + "/pages/blog/blog.pug"
+    }),
+    new HtmlWebpackPlugin({
+      filename: "works.html",
+      chunks: ["works"],
+      template: PATHS.source + "/pages/works/works.pug"
     }),
     new ClearWebpackPlugin("build")
   ],

@@ -45,7 +45,7 @@ export class FormSyncValidator {
 
   _createErrorField(text) {
     if (!text) {
-      return;
+      return true;
     }
 
     this.errorField = document.createElement("div");
@@ -76,6 +76,6 @@ export class FormSyncValidator {
       this.error = radioError;
     }
 
-    this._createErrorField(this.error);
+    return this._createErrorField(this.error);
   }
 }

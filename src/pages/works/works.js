@@ -5,6 +5,7 @@ import "../../components/slider/slider";
 import { initNavigationListeners } from "../../utilities/commonEvents";
 import { FormSyncValidator } from "../../components/form_validation/form_validator";
 import "../../components/enter_screen/enter_screen";
+import { apiRequest } from "../../utilities/axiosConfig";
 
 console.log("works.js");
 
@@ -23,15 +24,35 @@ const resetButton = document.querySelector("#formReset");
 
 const formValidator = new FormSyncValidator(form);
 
-inputs.forEach(input =>
-  input.addEventListener("click", function(e) {
-    this.classList.remove("form__input--invalid");
-  })
-);
+// inputs.forEach(input =>
+//   input.addEventListener("click", function(e) {
+//     this.classList.remove("form__input--invalid");
+//   })
+// );
 
 submitButton.addEventListener("click", e => {
   e.preventDefault();
-  formValidator.validateForm();
+  const isValid = formValidator.validateForm();
+  if (isValid) {
+    const inputName = form.elements.name;
+    const inputMail = form.elements.mail;
+    const inputMessage = form.elements.message;
+    const eMail = {
+      [inputName.name]: inputName.value,
+      [inputMail.name]: inputMail.value,
+      [inputMessage.name]: inputMessage.value
+    };
+    console.log("eMail", eMail);
+
+    apiRequest
+      .post("/works", eMail, { mode: "cors" })
+      .then(response => {
+        console.log("send mail response", response);
+      })
+      .catch(error => {
+        console.log("send mail error", error);
+      });
+  }
 });
 
 resetButton.addEventListener("click", e => {

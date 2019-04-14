@@ -1,134 +1,134 @@
-@import '../../pages/variables.scss';
-@import '../../pages/mixins.scss';
+@import "../../pages/variables.scss";
+@import "../../pages/mixins.scss";
 
-.techs__list{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+.techs__list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 
-    @include tablet{
-        justify-content: center;
-    };
-}
-.techs__item{
-    margin-right: 35px;
-    margin-bottom: 35px;
-
-    &:last-of-type{
-        margin-right: 0;
-    }
-
-    @include tablet{
-        margin: 0 17px 35px 17px;
-        &:last-of-type{
-            margin: 0 17px 35px 17px;
-        }
-    
-    }
-}
-
-.tech__block{
-    position: relative;
-    display: flex;
-    align-items: center;
+  @include tablet {
     justify-content: center;
+  }
+}
+.techs__item {
+  margin-right: 35px;
+  margin-bottom: 35px;
 
-    width: 110px;
-    height: 110px;
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @include tablet {
+    margin: 0 17px 35px 17px;
+    &:last-of-type {
+      margin: 0 17px 35px 17px;
+    }
+  }
 }
-.tech__img{
-    width: 110px;
-    height: 110px;
+
+.tech__block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 110px;
+  height: 110px;
 }
-.tech__text{
-    font-size: 12px;
-    color: $green;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
+.tech__img {
+  width: 110px;
+  height: 110px;
+}
+.tech__text {
+  font-size: 12px;
+  color: $green;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
 }
 
 .circle {
-    width: 100%;
-    height: 100%;
-    fill: transparent;
-    stroke-width: 15;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 15;
 }
 .circle__base {
-    stroke: #dfdcd5;
+  stroke: #dfdcd5;
 }
 .circle__color {
-    stroke: $green;
-    transition: all 3s;
+  stroke: $green;
+  transition: all 3s;
 }
 
 .circle__color--0 {
-    stroke-dasharray: .001 282.6;
+  stroke-dasharray: 0.001 282.6;
 }
 .circle__color--5 {
-    stroke-dasharray: 14.13 282.6;
+  stroke-dasharray: 14.13 282.6;
 }
 .circle__color--10 {
-    stroke-dasharray: 28.26 282.6;
+  stroke-dasharray: 28.26 282.6;
 }
-.circle__color--15{
-    stroke-dasharray: 42.39 282.6;
+.circle__color--15 {
+  stroke-dasharray: 42.39 282.6;
 }
-.circle__color--20{
-    stroke-dasharray: 56.52 282.6;
+.circle__color--20 {
+  stroke-dasharray: 56.52 282.6;
 }
-.circle__color--25{
-    stroke-dasharray: 70.65 282.6;
+.circle__color--25 {
+  stroke-dasharray: 70.65 282.6;
 }
-.circle__color--30{
-    stroke-dasharray: 84.78 282.6;
+.circle__color--30 {
+  stroke-dasharray: 84.78 282.6;
 }
-.circle__color--35{
-    stroke-dasharray: 98.91 282.6;
+.circle__color--35 {
+  stroke-dasharray: 98.91 282.6;
 }
-.circle__color--40{
-    stroke-dasharray: 113.04 282.6;
+.circle__color--40 {
+  stroke-dasharray: 113.04 282.6;
 }
-.circle__color--45{
-    stroke-dasharray: 127.17 282.6;
+.circle__color--45 {
+  stroke-dasharray: 127.17 282.6;
 }
-.circle__color--50{
-    stroke-dasharray: 141.3 282.6;
+.circle__color--50 {
+  stroke-dasharray: 141.3 282.6;
 }
-.circle__color--55{
-    stroke-dasharray: 155.43 282.6;
+.circle__color--55 {
+  stroke-dasharray: 155.43 282.6;
 }
-.circle__color--60{
-    stroke-dasharray: 169.56 282.6;
+.circle__color--60 {
+  stroke-dasharray: 169.56 282.6;
 }
-.circle__color--65{
-    stroke-dasharray: 183.69 282.6;
+.circle__color--65 {
+  stroke-dasharray: 183.69 282.6;
 }
-.circle__color--70{
-    stroke-dasharray: 197.82 282.6;
+.circle__color--70 {
+  stroke-dasharray: 197.82 282.6;
 }
-.circle__color--75{
-    stroke-dasharray: 211.95 282.6;
+.circle__color--75 {
+  stroke-dasharray: 211.95 282.6;
 }
-.circle__color--80{
-    stroke-dasharray: 226.08 282.6;
+.circle__color--80 {
+  stroke-dasharray: 226.08 282.6;
 }
-.circle__color--85{
-    stroke-dasharray: 240.21 282.6;
+.circle__color--85 {
+  stroke-dasharray: 240.21 282.6;
 }
-.circle__color--90{
-    stroke-dasharray: 254.34 282.6;
+.circle__color--90 {
+  stroke-dasharray: 254.34 282.6;
 }
-.circle__color--95{
-    stroke-dasharray: 268.47 282.6;
+.circle__color--95 {
+  stroke-dasharray: 268.47 282.6;
 }
-.circle__color--100{
-    stroke-dasharray: 282.6 282.6;
+.circle__color--100 {
+  stroke-dasharray: 282.6 282.6;
 }
 
-.circle__color--disable{
-    stroke-dasharray: .0010 282.6;
+.circle__color--disable {
+  stroke-dasharray: 0.001 282.6;
 }

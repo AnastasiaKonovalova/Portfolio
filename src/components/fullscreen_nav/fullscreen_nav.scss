@@ -1,5 +1,5 @@
-@import "../../pages/mixins.scss";
-@import "../../pages/variables.scss";
+@import '../../pages/mixins.scss';
+@import '../../pages/variables.scss';
 
 .menu__column {
   background-color: rgba($color: #7e9b5c, $alpha: 0.95);
@@ -139,14 +139,14 @@
 }
 .menu__button-close {
   width: 40px;
-  height: 35px;
+  height: 36px;
   position: relative;
   border-bottom: 4px solid $white;
   transition: border-bottom 0.7s;
 
   &::after {
     transition: transform 0.7s;
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     border-bottom: 4px solid $white;
@@ -157,7 +157,7 @@
 
   &::before {
     transition: transform 0.7s;
-    content: "";
+    content: '';
     display: block;
     width: 100%;
     border-bottom: 4px solid $white;
@@ -167,12 +167,12 @@
   }
 
   @include tablet {
-    width: 35px;
+    width: 36px;
     height: 30px;
     border-bottom: 2px solid $white;
   }
   @include phone {
-    width: 25px;
+    width: 26px;
     height: 20px;
 
     &::after {
@@ -202,12 +202,17 @@
     border-bottom: 1px solid rgba($color: $white, $alpha: 0);
 
     &::after {
-      transform: rotate(-45deg) translateY(11px) translateX(-11px);
+      transform: rotate(-45deg) translateY(12px) translateX(-12px);
     }
     &::before {
       transform: rotate(45deg);
     }
 
+    @include tablet {
+      &::after {
+        transform: rotate(-45deg) translateY(10px) translateX(-10px);
+      }
+    }
     @include phone {
       &::after {
         transform: rotate(-45deg) translateY(6px) translateX(-6px);

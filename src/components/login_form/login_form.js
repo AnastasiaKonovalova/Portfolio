@@ -1,13 +1,13 @@
-import "./login_form.scss";
-import { FormSyncValidator } from "../form_validation/form_validator";
-import { apiRequest } from "../../utilities/axiosConfig";
+import './login_form.scss';
+import { FormSyncValidator } from '../form_validation/form_validator';
+import { apiRequest } from '../../utilities/axiosConfig';
 
-const loginForm = document.querySelector("#loginForm");
-const submitButton = document.querySelector("#formSubmit");
-const returnButton = document.querySelector("#backToWelcome");
+const loginForm = document.querySelector('#loginForm');
+const submitButton = document.querySelector('#formSubmit');
+const returnButton = document.querySelector('#backToWelcome');
 const formValidator = new FormSyncValidator(loginForm);
 
-submitButton.addEventListener("click", e => {
+submitButton.addEventListener('click', e => {
   e.preventDefault();
   const isValid = formValidator.validateForm();
   if (isValid) {
@@ -19,17 +19,17 @@ submitButton.addEventListener("click", e => {
     };
 
     apiRequest
-      .post("/", userData, { mode: "cors" })
+      .post('/', userData, { mode: 'cors' })
       .then(response => {
-        console.log("login response", response);
-        location.href += "admin";
+        console.log('login response', response);
+        location.href += 'admin';
       })
       .catch(error => {
-        console.log("login error", error);
+        console.log('login error', error);
       });
   }
 });
 
-returnButton.addEventListener("click", e => {
+returnButton.addEventListener('click', e => {
   formValidator.removeErrors();
 });

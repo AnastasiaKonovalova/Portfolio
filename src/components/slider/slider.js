@@ -1,35 +1,35 @@
-import { debounce } from "../../utilities/helpers";
+import { debounce } from '../../utilities/helpers';
 
 window.onload = e => {
-  console.log("window.WORKS", window.WORKS);
+  console.log('window.WORKS', window.WORKS);
   if (window.WORKS) {
-    const MAIN_ACTIVE_CLASS = "works__img--active";
-    const SLIDE_ACTIVE_CLASS = "slider__img--active";
-    const SLIDE_UP_CLASS = "slider__img--up";
-    const SLIDE_DOWN_CLASS = "slider__img--down";
+    const MAIN_ACTIVE_CLASS = 'works__img--active';
+    const SLIDE_ACTIVE_CLASS = 'slider__img--active';
+    const SLIDE_UP_CLASS = 'slider__img--up';
+    const SLIDE_DOWN_CLASS = 'slider__img--down';
 
-    const slideTitle = document.querySelector(".works__title");
-    const slideTechs = document.querySelector(".works__techs");
-    const slideLink = document.querySelector(".works__link");
+    const slideTitle = document.querySelector('.works__title');
+    const slideTechs = document.querySelector('.works__techs');
+    const slideLink = document.querySelector('.works__link');
 
-    const slideDown = document.querySelector("#slideDown");
-    const slideUp = document.querySelector("#slideUp");
+    const slideDown = document.querySelector('#slideDown');
+    const slideUp = document.querySelector('#slideUp');
 
-    const [...leftSlides] = document.querySelectorAll(".slider__img--left");
-    const [...rightSlides] = document.querySelectorAll(".slider__img--right");
-    const [...mainSlides] = document.querySelectorAll(".works__img");
+    const [...leftSlides] = document.querySelectorAll('.slider__img--left');
+    const [...rightSlides] = document.querySelectorAll('.slider__img--right');
+    const [...mainSlides] = document.querySelectorAll('.works__img');
 
-    const mainSlideInfo = new WeakMap(mainSlides.map((slide, index) => [slide, WORKS[index]]));
+    const mainSlideInfo = new WeakMap(mainSlides.map((slide, index) => [slide, window.WORKS[index]]));
 
     const manageMainSlide = direction => {
       const activeMain = mainSlides.find(slide => slide.classList.contains(MAIN_ACTIVE_CLASS));
       let nextActiveMain;
       switch (direction) {
-        case "down":
+        case 'down':
           nextActiveMain = activeMain.previousElementSibling || mainSlides[mainSlides.length - 1];
           break;
 
-        case "up":
+        case 'up':
           nextActiveMain = activeMain.nextElementSibling || mainSlides[0];
           break;
 
@@ -47,14 +47,14 @@ window.onload = e => {
 
     const manageActiveClasses = (current, next, direction) => {
       current.classList.remove(SLIDE_ACTIVE_CLASS);
-      current.classList.add(direction === "down" ? SLIDE_DOWN_CLASS : SLIDE_UP_CLASS);
+      current.classList.add(direction === 'down' ? SLIDE_DOWN_CLASS : SLIDE_UP_CLASS);
       setTimeout(() => {
-        current.classList.remove(direction === "down" ? SLIDE_DOWN_CLASS : SLIDE_UP_CLASS);
-        current.classList.add(direction === "down" ? SLIDE_UP_CLASS : SLIDE_DOWN_CLASS);
+        current.classList.remove(direction === 'down' ? SLIDE_DOWN_CLASS : SLIDE_UP_CLASS);
+        current.classList.add(direction === 'down' ? SLIDE_UP_CLASS : SLIDE_DOWN_CLASS);
       }, 500);
 
       next.classList.add(SLIDE_ACTIVE_CLASS);
-      next.classList.remove(direction === "down" ? SLIDE_UP_CLASS : SLIDE_DOWN_CLASS);
+      next.classList.remove(direction === 'down' ? SLIDE_UP_CLASS : SLIDE_DOWN_CLASS);
     };
 
     const manageSmallSlides = direction => {
@@ -63,12 +63,12 @@ window.onload = e => {
       let nextActiveLeft, nextActiveRight;
 
       switch (direction) {
-        case "down":
+        case 'down':
           nextActiveLeft = activeLeft.previousElementSibling || leftSlides[leftSlides.length - 1];
           nextActiveRight = activeRight.previousElementSibling || rightSlides[leftSlides.length - 1];
           break;
 
-        case "up":
+        case 'up':
           nextActiveLeft = activeLeft.nextElementSibling || leftSlides[0];
           nextActiveRight = activeRight.nextElementSibling || rightSlides[0];
           break;
@@ -77,27 +77,27 @@ window.onload = e => {
           return;
       }
 
-      manageActiveClasses(activeLeft, nextActiveLeft, "down");
-      manageActiveClasses(activeRight, nextActiveRight, "up");
+      manageActiveClasses(activeLeft, nextActiveLeft, 'down');
+      manageActiveClasses(activeRight, nextActiveRight, 'up');
     };
 
     const debouncedManageMainSlide = debounce(250, manageMainSlide);
     const debouncedManageSmallSlides = debounce(250, manageSmallSlides);
 
-    slideDown.addEventListener("click", e => {
+    slideDown.addEventListener('click', e => {
       e.preventDefault();
-      console.log("down");
+      console.log('down');
 
-      debouncedManageMainSlide("down");
-      debouncedManageSmallSlides("down");
+      debouncedManageMainSlide('down');
+      debouncedManageSmallSlides('down');
     });
 
-    slideUp.addEventListener("click", e => {
+    slideUp.addEventListener('click', e => {
       e.preventDefault();
-      console.log("up");
+      console.log('up');
 
-      debouncedManageMainSlide("up");
-      debouncedManageSmallSlides("up");
+      debouncedManageMainSlide('up');
+      debouncedManageSmallSlides('up');
     });
   }
 };

@@ -1,76 +1,77 @@
 @import '../../pages/variables.scss';
 @import '../../pages/mixins.scss';
 
-.author{
-    min-width: 280px;
-    color: $white;
-    letter-spacing: 0.1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+.author {
+  min-width: 280px;
+  color: $white;
+  letter-spacing: 0.1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
-    @include phone{
-        min-width: 260px;
-    }
+  @include phone {
+    min-width: 260px;
+  }
 }
-.author__img{
-    background-image: url('../../img/ava.jpg');
-    background-size: cover;
-    width: 145px;
-    height: 145px;
-    border-radius: 50%;
-    margin-bottom: 25px;
+.author__img {
+  background-image: url('../../img/ava.jpg');
+  background-size: cover;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  margin-bottom: 25px;
 }
-.author__description{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.author__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.author__name{
-    font-size: 28px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    text-align: center;
+.author__name {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-align: center;
 
-    @include phone{
-        font-size: 21px;
-    }
+  @include phone {
+    font-size: 21px;
+  }
 }
-.author__text{
-    font-weight: 300;
-    text-align: center;
-    font-size: 16px;
+.author__text {
+  font-weight: 300;
+  text-align: center;
+  font-size: 16px;
 }
-.author__title{
-    font-family: 'Sansus-Webissimo', 'Arial', 'sans-serif';
-    font-size: 63px;
-    text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: 400;
-    margin-top: 20px;
+.author__title {
+  font-family: 'Sansus-Webissimo', 'Arial', 'sans-serif';
+  font-size: 63px;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 400;
+  margin-top: 20px;
 
-    &:after{
-        content: '';
-        background: $white;
-        height: 3px;
-        width: 90px;
-        margin-top: 30px;        
-    }
+  &:after {
+    content: '';
+    background: $white;
+    height: 3px;
+    width: 90px;
+    margin-top: 30px;
+  }
 
-    @include tablet{
-        font-size: 50px;
-        &::after{
-            height: 2px;
-            margin-top: 20px;
-        }
+  @include tablet {
+    font-size: 50px;
+    &::after {
+      height: 2px;
+      margin-top: 20px;
     }
-    @include phone{
-        font-size: 35px;
-        &::after{
-            width: 56px;
-        }
+  }
+  @include phone {
+    font-size: 35px;
+    &::after {
+      width: 56px;
     }
+  }
 }

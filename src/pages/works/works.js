@@ -4,6 +4,7 @@ import './works.scss';
 import '../../components/slider/slider';
 import { initNavigationListeners } from '../../utilities/commonEvents';
 import { FormSyncValidator } from '../../components/form_validation/form_validator';
+import { ResponseAlert } from '../../components/response_alert/response_alert';
 import '../../components/enter_screen/enter_screen';
 import { apiRequest } from '../../utilities/axiosConfig';
 
@@ -20,6 +21,8 @@ scrollUpButton.addEventListener('click', e => {
 const form = document.querySelector('.form');
 const submitButton = document.querySelector('#formSubmit');
 const resetButton = document.querySelector('#formReset');
+const responseAlert = new ResponseAlert();
+responseAlert.init();
 
 const formValidator = new FormSyncValidator(form);
 
@@ -41,9 +44,11 @@ submitButton.addEventListener('click', e => {
       .post('/works', eMail, { mode: 'cors' })
       .then(response => {
         console.log('send mail response', response);
+        responseAlert.showModal('Сообщение успешно отправлено');
       })
       .catch(error => {
         console.log('send mail error', error);
+        responseAlert.showModal(`Произошла ошибка: ${error.message}`);
       });
   }
 });

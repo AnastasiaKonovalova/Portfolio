@@ -1,10 +1,12 @@
-@import "../../pages/variables.scss";
-@import "../../pages/mixins.scss";
-@import "../form_validation/validation_styles.scss";
+@import '../../pages/variables.scss';
+@import '../../pages/mixins.scss';
+@import '../form_validation/validation_styles.scss';
+@import '../response_alert/response_alert.scss';
 
 .login {
   background-color: rgba($color: #122620, $alpha: 0.6);
   border-radius: 4px;
+  position: relative;
 }
 .login__main {
   width: 100%;
@@ -147,7 +149,7 @@
   visibility: hidden;
 
   &:checked + .radio--styled::after {
-    content: "";
+    content: '';
     width: 8px;
     height: 8px;
     background-color: $green;

@@ -1,9 +1,10 @@
-@import "../variables.scss";
-@import "../mixins.scss";
-@import "../../components/enter_screen/enter_screen.scss";
-@import "../../components/slider/slider.scss";
-@import "../../components/footer/footer.scss";
-@import "../../components/form_validation/validation_styles.scss";
+@import '../variables.scss';
+@import '../mixins.scss';
+@import '../../components/enter_screen/enter_screen.scss';
+@import '../../components/slider/slider.scss';
+@import '../../components/footer/footer.scss';
+@import '../../components/form_validation/validation_styles.scss';
+@import '../../components/response_alert/response_alert.scss';
 
 .works {
   position: relative;
@@ -137,6 +138,7 @@
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 70px;
+  position: relative;
 
   @include tablet {
     margin-bottom: 50px;
@@ -257,7 +259,7 @@
 }
 .works__background {
   position: relative;
-  background-image: url("../../img/comments_bg_high.jpg");
+  background-image: url('../../img/comments_bg_high.jpg');
   background-size: cover;
   background-position: center bottom;
   width: 100%;
@@ -268,15 +270,15 @@
   flex-direction: column;
 
   @include tv {
-    background-image: url("../../img/comments_bg_big.jpg");
+    background-image: url('../../img/comments_bg_big.jpg');
     background-position: center -10px;
   }
   @include tablet {
-    background-image: url("../../img/comments_bg_ipad.jpg");
+    background-image: url('../../img/comments_bg_ipad.jpg');
     background-position: center -10px;
   }
   @include phone {
-    background-image: url("../../img/comments_bg_phone.jpg");
+    background-image: url('../../img/comments_bg_phone.jpg');
     background-position: center bottom;
   }
 }

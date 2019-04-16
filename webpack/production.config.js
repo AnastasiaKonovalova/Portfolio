@@ -2,7 +2,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-module.exports = function () {
+module.exports = function() {
   return {
     optimization: {
       minimizer: [

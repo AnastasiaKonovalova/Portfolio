@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = function() {
   return {
     mode: 'development',
     devtool: 'source-map',
@@ -27,7 +27,7 @@ module.exports = function () {
     devServer: {
       open: true,
       port: 8080,
-      setup (app) {
+      setup(app) {
         app.get('/about', (req, res) => {
           res.redirect('/about.html');
         });

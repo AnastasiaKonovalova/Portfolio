@@ -4,7 +4,6 @@ export class FormSyncValidator {
     this.errorField = null;
     this.error = null;
     this.inputs = [];
-    this.radios = [];
     this._getInputs();
   }
 
@@ -20,13 +19,6 @@ export class FormSyncValidator {
         }
       }
     });
-  }
-
-  _validateRadios(radios) {
-    if (radios.length === 0) {
-    } else if (!radios.find(element => element.checked)) {
-      return 'Подумайте, робот ли вы';
-    }
   }
 
   _validateInput(input) {
@@ -70,11 +62,6 @@ export class FormSyncValidator {
         return accum;
       }
     }, this.error);
-
-    const radioError = !this.error && this._validateRadios(this.radios);
-    if (radioError) {
-      this.error = radioError;
-    }
 
     return this._createErrorField(this.error);
   }

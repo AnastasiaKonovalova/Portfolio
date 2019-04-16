@@ -13,21 +13,13 @@ const aboutSection = document.querySelector('.about__main');
 initNavigationListeners(aboutSection);
 
 mapboxgl.accessToken = mapToken;
+// eslint-disable-next-line no-unused-vars
 const map = new mapboxgl.Map({
   container: 'mapContainer',
   style: mapStyle,
   center: [37.622504, 55.753215],
   zoom: 10
 });
-
-const div = document.createElement('div');
-div.className = 'map__marker';
-const marker = new mapboxgl.Marker({
-  element: div,
-  anchor: 'bottom'
-});
-marker.setLngLat([37.622504, 55.753215]);
-marker.addTo(map);
 
 const [...stackLists] = document.querySelectorAll('.techs__list');
 const stack = new WeakMap(

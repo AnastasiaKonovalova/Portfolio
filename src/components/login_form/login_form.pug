@@ -10,27 +10,11 @@
                         svg.auth-form__vector.auth-form__vector--login
                             use(xlink:href="#login")
                 .auth-form__row
-                    input#inputPassword.auth-form__input.auth-form__input--password(placeholder="Пароль" name='password')
+                    input#inputPassword.auth-form__input.auth-form__input--password(placeholder="Пароль" name='password' type='password')
                     .auth-form__icon
                         svg.auth-form__vector.auth-form__vector--password
                             use(xlink:href="#password")
 
-            .auth-form__check
-                label.checkbox__label.auth-form__label(for="inputCheck") Я человек
-                    input#inputCheck.auth-form__checkbox(type="checkbox" name='human')
-                    .checkbox--styled
-                        svg.checkbox__vector
-                            use(xlink:href="#check")
-            .auth-form__question Вы точно не робот?
-            .auth-form__radio
-                .radio__block.radio__block--left
-                    label.radio__label.auth-form__label(for="radioYes") Да
-                        input#radioYes.radio__input(type="radio" name="robot")
-                        .radio--styled
-                .radio__block.radio__block--right
-                    label.radio__label.auth-form__label(for="radioNo") Не уверен
-                        input#radioNo.radio__input(type="radio" name="robot")
-                        .radio--styled
         .login__buttons.form__buttons
             button#backToWelcome(type="reset").form__return.form__button На главную
             button#formSubmit(type="submit").form__submit.form__button Войти

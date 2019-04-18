@@ -48,5 +48,7 @@ const handleAnimation = e => {
   }
 };
 
-window.addEventListener('scroll', handleAnimation);
-window.addEventListener('load', handleAnimation);
+if (stackLists.length) {
+  window.addEventListener('scroll', handleAnimation);
+  window.addEventListener('load', handleAnimation);
+}

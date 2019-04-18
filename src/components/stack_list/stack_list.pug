@@ -1,21 +1,13 @@
-- var frontend=[{tech: 'HTML5', percent: 85}, {tech: 'CSS', percent: 70}, {tech: 'JavaScript', percent: 50}]
-- var backend=[{tech: 'PHP', percent: 55}, {tech: 'MySQL', percent: 25}, {tech: 'Node.js & npm', percent: 10}, {tech: 'Mongo.db', percent: 5}]
-- var workflow=[{tech: 'git', percent: 20}, {tech: 'webpack', percent: 45}, {tech: 'gulp', percent: 35}]
+- var skills = [{type: 'backend',skills: [{skill: 'PHP', percent: 55}, {skill: 'MySQL', percent: 25}, {skill: 'Node.js & npm', percent: 10}, {skill: 'Mongo.db', percent: 5}]}, {type: 'frontend', skills: [{skill: 'HTML5', percent: 85}, {skill: 'CSS', percent: 70}, {skill: 'JavaScript', percent: 50}]}, {type: 'workflow', skills: [{skill: 'git', percent: 20}, {skill: 'webpack', percent: 45}, {skill: 'gulp', percent: 35}]}]
 
 include ../../components/stack/stack.pug
 
 ul.stack__list
-
-    li.stack__item
-        .stack__name frontend
-        .stack__techs
-            +stack(frontend)
-    li.stack__item
-        .stack__name backend
-        .stack__techs
-            +stack(backend)
-    li.stack__item
-        .stack__name workflow
-        .stack__techs
-            +stack(workflow)
-
+    if skills.length
+        each skill in skills
+            li.stack__item
+                .stack__name=skill.type
+                .stack__techs
+                    +stack(skill.skills)
+    else
+        h3.stack__fallback.subtitle Скиллов пока нет

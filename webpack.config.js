@@ -16,7 +16,8 @@ const common = {
     index: PATHS.source + '/pages/index/index.js',
     about: PATHS.source + '/pages/about/about.js',
     works: PATHS.source + '/pages/works/works.js',
-    blog: PATHS.source + '/pages/blog/blog.js'
+    blog: PATHS.source + '/pages/blog/blog.js',
+    error: PATHS.source + '/pages/error/error.js'
   },
   output: {
     path: PATHS.build,
@@ -42,6 +43,11 @@ const common = {
       filename: 'works.html',
       chunks: ['works'],
       template: PATHS.source + '/pages/works/works.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'error.html',
+      chunks: ['error'],
+      template: PATHS.source + '/pages/error/error.pug'
     }),
     new ClearWebpackPlugin('build')
   ],

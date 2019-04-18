@@ -41,14 +41,14 @@ submitButton.addEventListener('click', e => {
     console.log('eMail', eMail);
 
     apiRequest
-      .post('/works', eMail, { mode: 'cors' })
+      .post('/works', eMail)
       .then(response => {
         console.log('send mail response', response);
         responseAlert.showModal('Сообщение успешно отправлено');
       })
       .catch(error => {
         console.log('send mail error', error);
-        responseAlert.showModal(`Произошла ошибка: ${error.message}`);
+        responseAlert.showModal(`${error.response.data.message}`);
       });
   }
 });

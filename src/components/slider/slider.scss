@@ -78,6 +78,16 @@
     margin-bottom: 20px;
   }
 }
+
+.works__fallback {
+  margin: auto;
+  text-align: center;
+
+  &:after {
+    background-color: $gray-green;
+  }
+}
+
 .works__techs {
   text-align: center;
 

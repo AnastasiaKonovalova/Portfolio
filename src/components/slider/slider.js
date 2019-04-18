@@ -2,7 +2,7 @@ import { debounce } from '../../utilities/helpers';
 
 window.onload = e => {
   console.log('window.WORKS', window.WORKS);
-  if (window.WORKS) {
+  if (window.WORKS.length) {
     const MAIN_ACTIVE_CLASS = 'works__img--active';
     const SLIDE_ACTIVE_CLASS = 'slider__img--active';
     const SLIDE_UP_CLASS = 'slider__img--up';

@@ -5,333 +5,321 @@
 @import '../../components/contacts/contacts.scss';
 @import '../../components/footer/footer.scss';
 
-.triangle__vector{
-    position: absolute;
-    top: 0;
-    transform: translateY(-99%);
+.triangle__vector {
+  position: absolute;
+  top: 0;
+  transform: translateY(-99%);
 
-    .left{
-        fill: #ebefe2;
-    }
-    .right{
-        fill: #f4f5f0;
+  .left {
+    fill: #ebefe2;
+  }
+  .right {
+    fill: #f4f5f0;
 
-        @include tablet{
-            fill: #ebefe2;
-        }
-
-        @include phone-landscape{
-            fill: #ebefe2;
-        }
-    }
-}
-
-.about__main{
-    position: relative;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-areas: 
-        "about techs";
-
-    @include tablet{
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        flex-direction: column;
+    @include tablet {
+      fill: #ebefe2;
     }
 
-    @include phone-landscape{
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        flex-direction: column;
+    @include phone-landscape {
+      fill: #ebefe2;
     }
+  }
 }
 
-.column--left{
-    background-color: #ebefe2;
-    grid-area: about;
-}
-.column--right{
-    background-color: #f4f5f0;
-    grid-area: techs;
-}
+.about__main {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: 'about techs';
 
-.column{
+  @include tablet {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @include tablet{
-        width: 100%;
-    }
-
-}
-.column__about-alignment{
-    width: 100%;
-    padding: 0 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-
-    @include tv{
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding: 0 40px;
-    }
-    @include tablet{
-        padding: 50px 110px 0 110px;
-    }
-
-    @include phone{
-        padding: 30px 10px 0 10px;
-    }
-
-    @include phone-landscape{
-        padding: 30px 10px 0 10px;
-    }
-
-}
-.about__info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
-
-    @include tv{
-        width: 50%;
-    }
-
-    @include phone-landscape{
-        height: 100vh;
-    }
-}
-.column__skills-alignment{
-    padding: 0 0 0 40px;
-    display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+  }
 
-    @include tablet{
-        padding: 50px 110px 0 110px;
-    }
-    @include phone{
-        padding: 30px 10px 0 10px;
-    }
-    @include phone-landscape{
-        padding: 30px 10px 0 10px;
-    }
-}
-
-
-.about__title{
-    margin-bottom: 30px;
-
-    @include tv{
-        width: 50%;
-    }
-}
-.about__title-text{
-    color: $gray-green;
-    font-weight: 300;
-
-    &:after{
-        background-color: $gray-green;
-    }
-}
-
-.about__img{
-    height: 400px;
-    width: 400px;
-    margin-bottom: 40px;
+  @include phone-landscape {
     display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
     flex-direction: column;
-    align-items: center;
-
-    @include tv{
-        width: 100%;
-    }
-    @include phone{
-        width: 320px;
-    }
-    @include phone-landscape{
-        width: 50%;
-        height: 100%;
-        margin-bottom: 0;
-    }
-}
-.about__pic{
-    max-height: 100%;
-    max-width: 100%;
+  }
 }
 
-
-
-.about__description{
-    margin-bottom: 15px;
-    padding: 0 20px;
-
-    @include phone-landscape{
-        width: 50%;
-        height: 100%;
-        margin-bottom: 0;
-    }
+.column--left {
+  background-color: #ebefe2;
+  grid-area: about;
 }
-.description__title{
-    margin-bottom: 25px;
-    
-    &:after{
-        background-color: $gray-green;    
-    }
-}
-.description__text{
-    line-height: 1.5;
-    margin-bottom: 15px;
-
-    @include phone{
-        padding: 0 10px;
-    }
-
-    @include phone-landscape{
-        padding: 0 10px;
-    }
+.column--right {
+  background-color: #f4f5f0;
+  grid-area: techs;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-.skills__description{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 60px;
-}
-.skills__title{
-    text-align: center;
-    width: 300px;
-    margin-bottom: 25px;
-    font-weight: 300;
-
-    &::after{
-        background-color: $gray-green;
-    }
-
-    @include phone{
-        padding: 0 70px;
-    }
-}
-.skills__text{
-    line-height: 1.5;
-
-    @include phone{
-        padding: 0 10px;
-    }
-
-    @include phone-landscape{
-        padding: 0 10px;
-    }
-}
-
-
-.stack__list, .stack__item{
-    @include tablet{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
-
-    @include phone-landscape{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-    }
-}
-
-.stack__name{
-    font-size: 28px;
-    font-weight: 500;
-    text-transform: capitalize;
-    margin-bottom: 20px;
-
-    @include tablet{
-        font-size: 21px;
-    }
-}
-
-
-.about__contacts{
+  @include tablet {
     width: 100%;
+  }
+}
+.column__about-alignment {
+  width: 100%;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  @include tv {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  @include tablet {
+    padding: 50px 110px 0 110px;
+  }
+
+  @include phone {
+    padding: 30px 10px 0 10px;
+  }
+
+  @include phone-landscape {
+    padding: 30px 10px 0 10px;
+  }
+}
+.about__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  @include tv {
+    width: 50%;
+  }
+
+  @include phone-landscape {
     height: 100vh;
-    min-height: 500px;
-    position: relative;
-    
-    @include phone{
-        height: 150vh;
-    }
+  }
 }
-.contacts__block{
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+.column__skills-alignment {
+  padding: 0 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    padding: 40px;
-    background-color: rgba($color: $white, $alpha: 0.8);
-    border-radius: 4px;
-
-    @include phone{
-        top: 0;
-        padding: 20px;
-        width: 100vw;
-    }
-    @include phone-landscape{
-        top: 0;
-        padding: 20px 20px 0 20px;
-        width: 100vw;
-    }
-}
-.contacts__title{
-    margin-bottom: 30px;
-    font-weight: 300;
-    &::after{
-        background-color: $gray-green;
-    }
-}
-.contacts__contacts{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @include tablet {
+    padding: 50px 110px 0 110px;
+  }
+  @include phone {
+    padding: 30px 10px 0 10px;
+  }
+  @include phone-landscape {
+    padding: 30px 10px 0 10px;
+  }
 }
 
+.about__title {
+  margin-bottom: 30px;
 
-.map{
+  @include tv {
+    width: 50%;
+  }
+}
+.about__title-text {
+  color: $gray-green;
+  font-weight: 300;
+
+  &:after {
+    background-color: $gray-green;
+  }
+}
+
+.about__img {
+  height: 400px;
+  width: 400px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tv {
     width: 100%;
+  }
+  @include phone {
+    width: 320px;
+  }
+  @include phone-landscape {
+    width: 50%;
     height: 100%;
+    margin-bottom: 0;
+  }
 }
-.map__marker{
-    background-image: url('../../icons/map_marker.svg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 10;
-    width: 40px;
-    height: 40px;
+.about__pic {
+  max-height: 100%;
+  max-width: 100%;
 }
 
-.about__footer{
-    z-index: 20;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;    
+.about__description {
+  margin-bottom: 15px;
+  padding: 0 20px;
+
+  @include phone-landscape {
+    width: 50%;
+    height: 100%;
+    margin-bottom: 0;
+  }
+}
+.description__title {
+  margin-bottom: 25px;
+
+  &:after {
+    background-color: $gray-green;
+  }
+}
+.description__text {
+  line-height: 1.5;
+  margin-bottom: 15px;
+
+  @include phone {
+    padding: 0 10px;
+  }
+
+  @include phone-landscape {
+    padding: 0 10px;
+  }
 }
 
-  
+.skills__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 60px;
+}
+.skills__title {
+  text-align: center;
+  width: 300px;
+  margin-bottom: 25px;
+  font-weight: 300;
+
+  &::after {
+    background-color: $gray-green;
+  }
+
+  @include phone {
+    padding: 0 70px;
+  }
+}
+.skills__text {
+  line-height: 1.5;
+
+  @include phone {
+    padding: 0 10px;
+  }
+
+  @include phone-landscape {
+    padding: 0 10px;
+  }
+}
+
+.stack__list,
+.stack__item {
+  @include tablet {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  @include phone-landscape {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+.stack__name {
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+
+  @include tablet {
+    font-size: 21px;
+  }
+}
+
+.about__contacts {
+  width: 100%;
+  height: 100vh;
+  min-height: 500px;
+  position: relative;
+
+  @include phone {
+    height: 150vh;
+  }
+}
+.contacts__block {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  padding: 40px;
+  background-color: rgba($color: $white, $alpha: 0.8);
+  border-radius: 4px;
+
+  @include phone {
+    top: 0;
+    padding: 20px;
+    width: 100vw;
+  }
+  @include phone-landscape {
+    top: 0;
+    padding: 20px 20px 0 20px;
+    width: 100vw;
+  }
+}
+.contacts__title {
+  margin-bottom: 30px;
+  font-weight: 300;
+  &::after {
+    background-color: $gray-green;
+  }
+}
+.contacts__contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+.map__marker {
+  background-image: url('../../icons/map_marker.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+}
+
+.about__footer {
+  z-index: 20;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

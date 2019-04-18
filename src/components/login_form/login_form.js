@@ -22,14 +22,14 @@ submitButton.addEventListener('click', e => {
     };
 
     apiRequest
-      .post('/', userData, { mode: 'cors' })
+      .post('/', userData)
       .then(response => {
         console.log('login response', response);
         location.href += 'admin';
       })
       .catch(error => {
-        console.log('login error', error);
-        responseAlert.showModal(`Произошла ошибка: ${error.message}`);
+        console.log('login error', error.response.data.message);
+        responseAlert.showModal(`${error.response.data.message}`);
       });
   }
 });

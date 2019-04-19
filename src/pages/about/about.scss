@@ -194,6 +194,14 @@
   }
 }
 
+.stack__fallback {
+  text-align: center;
+
+  &:after {
+    background-color: $gray-green;
+  }
+}
+
 .skills__description {
   display: flex;
   flex-direction: column;

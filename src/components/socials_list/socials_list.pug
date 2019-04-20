@@ -1,11 +1,12 @@
-- var socials=['vk', 'git', 'in']
+- var socials2=['vk', 'git', 'in']
+- var socials=[{type: 'vk', link: 'https://vk.com/id2311677'}, {type: 'git', link: 'https://github.com/AnastasiaKonovalova'}, {type: 'in', link:'#'}]
 
 include ../../icons/socials_sprite.svg
 mixin socials(newClass)
     .socials
         ul.socials__list
-            each value, index in socials
+            each value in socials
                 li.socials__item
-                    a.socials__link(href="#")
-                        svg(class = "socials__vector socials__vector--" + value + " socials__vector--" + newClass)
-                            use(xlink:href="#" + value)
+                    a.socials__link(href=value.link)
+                        svg(class = "socials__vector socials__vector--" + value.type + " socials__vector--" + newClass)
+                            use(xlink:href="#" + value.type)

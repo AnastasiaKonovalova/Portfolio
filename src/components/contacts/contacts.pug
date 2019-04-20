@@ -1,15 +1,15 @@
 include ../../icons/contacts_sprite.svg
 
-- var contacts={skype: 'skype_kdn', mail: 'astahov@gmail.com', phone: '+7 931 200 93 24', map: 'Новосибирск, ул. Инская, д.14'}
+- var contacts={skype: 'archi-nastya', mail: 'konovalova.anast@gmail.com', phone: '+7 926 754 29 58', map: 'Москва, ул. Ивовая, д. 6'}
 
 ul.contacts__list
     each value, key in contacts
         li.contacts__item
             a(href=`${
                 key === 'mail' 
-                    ? 'mailto:astahov@gmail.com'
+                    ? 'mailto:konovalova.anast@gmail.com'
                     : key === 'phone'
-                    ? 'tel:+79312009324'
+                    ? 'tel:+79267542958'
                     : '#'
             }`)
                 .contacts__img

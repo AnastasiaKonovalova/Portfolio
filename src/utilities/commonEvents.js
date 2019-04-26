@@ -1,4 +1,4 @@
-export const initNavigationListeners = (firstSection) => {
+export const initNavigationListeners = firstSection => {
   const showNavButton = document.querySelector('#navButton');
   const closeNavButton = document.querySelector('#closeNavButton');
   const scrollDownButton = document.querySelector('#scrollDownButton');
@@ -14,6 +14,7 @@ export const initNavigationListeners = (firstSection) => {
     navigation.classList.add('menu__nav--visible');
     showNavButton.classList.add('header__hamburger--hidden');
     document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
   };
   const hideNavDisplay = () => {
     columnLeft.classList.remove('menu__column--left--visible');
@@ -22,6 +23,7 @@ export const initNavigationListeners = (firstSection) => {
     navigation.classList.remove('menu__nav--visible');
     showNavButton.classList.remove('header__hamburger--hidden');
     document.body.style.overflow = 'auto';
+    document.documentElement.style.overflow = 'auto';
   };
 
   showNavButton.addEventListener('click', showNavDisplay);

@@ -1,7 +1,7 @@
 extends ../common.pug
 
 block title
-    - var worksArray = JSON.stringify([{id: 1, title: "школа онлайн образования", stack: "HTML, CSS", url: "#", img: "./img/work-1.png"}, { id: 2,title: "itLoft",stack: "HTML, JS", url: "#",img: "./img/work-2.png"},{id: 3,title: "smth",stack: "CSS, JS",url: "#",img: "./img/work-3.png"}]);
+    - var worksArray = JSON.stringify([{id: 1, title: 'Клиент приложения для заказа такси', stack: 'Redux, redux-saga, Redux Form, CSS-modules, Jest', url: 'https://github.com/AnastasiaKonovalova/Loft-taxi', img: "./img/loft_taxi.JPG"}, {id: 2, title: 'Чат', stack: 'JavaScript, Node.js, Handlebars, SCSS, HTML5 File API, HTML5 dnd API, WebSoсket', url: 'https://github.com/AnastasiaKonovalova/Chat', img: "./img/chat_new.JPG"}, {id: 3, title: 'Приложение для создания отзывов на карте', stack: 'JavaScript ,Handlebars, SCSS, HTML5 dnd API', url: 'https://github.com/AnastasiaKonovalova/Geo-reviews', img: "./img/georeview.JPG"}, {id: 4, title: 'Лендинг для бургер-бара', stack: 'JavaScript, HTML, SCSS', url: 'https://github.com/AnastasiaKonovalova/burgers', img: "./img/burgers.JPG"}, {id: 5, title: 'Приложение для работы с VK api', stack: 'JavaScript, Handlebars, SCSS, VK API, HTML5 dnd API', url: 'https://github.com/AnastasiaKonovalova/Friends-filter', img: "./img/friends_filter.JPG"}])
     title Works
     script#myWorks 
         != `window.WORKS = ${worksArray}`

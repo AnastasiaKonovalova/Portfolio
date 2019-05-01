@@ -109,7 +109,13 @@
   align-items: center;
 }
 .comment__img {
+  width: 80px;
+  height: 80px;
   margin-bottom: 20px;
+}
+.comment__pic {
+  height: 100%;
+  width: 100%;
 }
 .comment__text {
   margin-bottom: 25px;

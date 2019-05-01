@@ -15,11 +15,8 @@
   width: 50%;
 
   @include tablet {
-    height: 25%;
-    width: 100%;
-  }
-  @include phone {
     height: 20%;
+    width: 100%;
   }
 
   @include phone-landscape {
@@ -42,11 +39,6 @@
 
   @include tablet {
     width: 100%;
-    height: 25%;
-    transform: translateY(200%);
-  }
-
-  @include phone {
     padding: 0 50px;
     height: 40%;
     transform: translateY(100%);
@@ -131,10 +123,6 @@
 
   @include tablet {
     width: 100%;
-    height: 50%;
-    transform: translateY(-50%);
-  }
-  @include phone {
     height: 40%;
     transform: translateY(-100%);
   }

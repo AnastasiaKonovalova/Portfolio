@@ -135,93 +135,82 @@
   right: 0;
   margin: 30px;
   z-index: 40;
+  height: 35px;
   visibility: hidden;
-}
-.menu__button-close {
-  width: 40px;
-  height: 36px;
-  position: relative;
-  border-bottom: 4px solid $white;
-  transition: border-bottom 0.7s;
 
-  &::after {
-    transition: transform 0.7s;
-    content: '';
-    display: block;
-    width: 100%;
-    border-bottom: 4px solid $white;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-
-  &::before {
-    transition: transform 0.7s;
-    content: '';
-    display: block;
-    width: 100%;
-    border-bottom: 4px solid $white;
-    position: absolute;
-    top: 50%;
-    left: 0;
-  }
+  display: flex;
+  align-items: center;
 
   @include tablet {
-    width: 36px;
-    height: 30px;
-    border-bottom: 2px solid $white;
+    height: 32px;
+  }
+  @include phone-landscape {
+    height: 32px;
   }
   @include phone {
-    width: 26px;
-    height: 20px;
+    height: 27px;
+  }
+}
+.close-btn__line {
+  transition: 0.7s;
+  width: 100%;
+  height: 4px;
+  background-color: $white;
+  position: absolute;
 
-    &::after {
-      border-bottom: 2px solid $white;
-    }
-    &::before {
-      border-bottom: 2px solid $white;
-    }
+  @include phone {
+    height: 2px;
+  }
+
+  @include phone-landscape {
+    height: 2px;
+  }
+}
+.close-btn__line--top {
+  top: 0;
+  left: 0;
+}
+.close-btn__line--middle {
+  top: 50%;
+  left: 0;
+}
+.close-btn__line--bottom {
+  top: 100%;
+  left: 0;
+}
+.menu__close-btn {
+  width: 40px;
+  height: 35px;
+  position: relative;
+
+  @include tablet {
+    width: 35px;
+    height: 30px;
+  }
+  @include phone {
+    width: 25px;
+    height: 20px;
   }
   @include phone-landscape {
     width: 25px;
     height: 20px;
-
-    &::after {
-      border-bottom: 2px solid $white;
-    }
-    &::before {
-      border-bottom: 2px solid $white;
-    }
   }
 }
 
 .menu__button--visible {
   visibility: visible;
 
-  .menu__button-close {
-    border-bottom: 1px solid rgba($color: $white, $alpha: 0);
-
-    &::after {
-      transform: rotate(-45deg) translateY(12px) translateX(-12px);
-    }
-    &::before {
+  .menu__close-btn {
+    .close-btn__line--top {
+      top: 50%;
       transform: rotate(45deg);
     }
-
-    @include tablet {
-      &::after {
-        transform: rotate(-45deg) translateY(10px) translateX(-10px);
-      }
+    .close-btn__line--middle {
+      opacity: 0;
     }
-    @include phone {
-      &::after {
-        transform: rotate(-45deg) translateY(6px) translateX(-6px);
-      }
-    }
-    @include phone-landscape {
-      &::after {
-        transform: rotate(-45deg) translateY(6px) translateX(-6px);
-      }
+    .close-btn__line--bottom {
+      top: 50%;
+      transform: rotate(-45deg);
     }
   }
 }

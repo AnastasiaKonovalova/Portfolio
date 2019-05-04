@@ -1,85 +1,70 @@
 @import '../../pages/variables.scss';
 @import '../../pages/mixins.scss';
 
-.header{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px;
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
 }
 
-.header__hamburger{
-    display: block;
+.header__hamburger {
+  display: block;
 }
-.header__hamburger--hidden{
-    display: none;
+.header__hamburger--hidden {
+  display: none;
 }
 
-.hamburger{
-    width: 40px;
-    height: 35px;
-    transition: 0.3s;  
-    position: relative;
-    border-bottom: 4px solid $white;
+.hamburger__line {
+  transition: 0.3s;
+  width: 100%;
+  height: 4px;
+  background-color: $white;
+  position: absolute;
 
-    &:hover{
-        border-bottom: 4px solid $green;
+  @include phone {
+    height: 2px;
+  }
 
-        &::after{
-            border-bottom: 4px solid $green;
-        }
-        &::before{
-            border-bottom: 4px solid $green;
-        }
-    }
+  @include phone-landscape {
+    height: 2px;
+  }
+}
+.hamburger__line--top {
+  top: 0;
+  left: 0;
+}
+.hamburger__line--middle {
+  top: 50%;
+  left: 0;
+}
+.hamburger__line--bottom {
+  top: 100%;
+  left: 0;
+}
 
+.hamburger {
+  width: 40px;
+  height: 35px;
+  position: relative;
 
-    &::after{
-        transition: 0.3s;  
-        content: '';
-        display: block;
-        width: 100%;
-        border-bottom: 4px solid $white;
-        position: absolute;
-        top: 0;
-        left: 0;
+  &:hover {
+    .hamburger__line {
+      background-color: $green;
     }
-    &::before{
-        transition: 0.3s;  
-        content: '';
-        display: block;
-        width: 100%;
-        border-bottom: 4px solid $white;
-        position: absolute;
-        top: 50%;
-        left: 0;
-    }
+  }
 
-    @include tablet{
-        width: 35px;
-        height: 30px;     
-    }
-    @include phone{
-        width: 25px;
-        height: 20px;     
-        border-bottom: 2px solid $white;
-        &::after{
-            border-bottom: 2px solid $white;
-        }
-        &::before{
-            border-bottom: 2px solid $white;
-        }
-    }
-    @include phone-landscape{
-        width: 25px;
-        height: 20px; 
-        border-bottom: 2px solid $white;
-        &::after{
-            border-bottom: 2px solid $white;
-        }
-        &::before{
-            border-bottom: 2px solid $white;
-        }    
-    }
+  @include tablet {
+    width: 35px;
+    height: 30px;
+  }
+  @include phone {
+    width: 25px;
+    height: 20px;
+  }
+  @include phone-landscape {
+    width: 25px;
+    height: 20px;
+  }
 }
